@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Design MCQs - National Junior AI Olympiad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #f9ca24 0%, #f0932b 100%); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; text-align: center; padding: 30px 20px; }
+        .header h1 { margin: 0; font-size: 2em; }
+        .content { padding: 30px; }
+        .back-btn { background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; text-decoration: none; display: inline-block; margin-bottom: 20px; transition: all 0.3s ease; }
+        .back-btn:hover { background: #5a6268; transform: translateY(-2px); }
+        .question-container { background: #f8f9fa; border-radius: 12px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #f9ca24; }
+        .question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .question-number { font-weight: 600; color: #f9ca24; }
+        .question-text { font-size: 1.1em; margin-bottom: 20px; color: #2c3e50; }
+        .options { display: grid; gap: 12px; }
+        .option { background: white; border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; cursor: pointer; transition: all 0.3s ease; }
+        .option:hover { border-color: #f9ca24; background: #fff8e1; }
+        .option.selected.correct { border-color: #4caf50; background: #e8f5e8; }
+        .option.selected.incorrect { border-color: #f44336; background: #ffeaea; }
+        .explanation { margin-top: 15px; padding: 15px; border-radius: 8px; display: none; }
+        .explanation.correct { background: #e8f5e8; border-left: 4px solid #4caf50; color: #2e7d32; }
+        .explanation.incorrect { background: #ffeaea; border-left: 4px solid #f44336; color: #c62828; }
+        .reset-btn { background: #ff9800; color: white; border: none; padding: 5px 10px; border-radius: 15px; cursor: pointer; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>System Design Practice</h1>
+            <p>Test your knowledge of scalable architecture</p>
+        </div>
+        <div class="content">
+            <a href="system-design.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to System Design</a>
+            <div id="questions-container"></div>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            {
+                question: "What does 'Scalability' mean in AI system design?",
+                options: ["The ability of the system to get physically larger", "The ability to handle growing amounts of work (data, users) by adding resources", "The ability to measure weight", "The ability to run on old computers"],
+                correct: 1,
+                explanation: "Scalability ensures your AI app doesn't crash when it goes from 10 users to 10 million. Vertical scaling adds power to one machine; Horizontal scaling adds more machines."
+            },
+            {
+                question: "Why might you use a Microservices architecture for an AI application?",
+                options: ["To make the application smaller", "To decouple components (e.g., training, inference, UI) so they can be developed, deployed, and scaled independently", "Because it's the only way to write Python code", "To reduce the number of files in the project"],
+                correct: 1,
+                explanation: "Instead of one giant 'monolith', microservices break the app into pieces. If the 'Inference Service' is overloaded, you can add more inference servers without touching the 'Training Service'."
+            },
+            {
+                question: "In a real-time recommendation system, why is low Latency important?",
+                options: ["So the user doesn't have to wait long for a recommendation", "So the system can process millions of users at once", "So the server uses less electricity", "So the recommendations are more accurate"],
+                correct: 0,
+                explanation: "Latency is the delay before a transfer of data begins following an instruction. In real-time apps, high latency means a laggy experience. Throughput is how *many* requests you can handle per second."
+            },
+            {
+                question: "What is the primary use case for a Vector Database in AI?",
+                options: ["Storing usernames and passwords", "Efficiently storing and searching high-dimensional vectors (embeddings) for similarity search", "Drawing vector graphics", "Hosting the website HTML"],
+                correct: 1,
+                explanation: "Standard databases are bad at finding 'similar' things. Vector DBs index the mathematical representation of data (embeddings), allowing you to find 'nearest neighbors' instantly, which is crucial for RAG and semantic search."
+            },
+            {
+                question: "What does 'Model Serving' refer to?",
+                options: ["A waiter bringing food to a model", "The process of making a trained machine learning model available to receive requests and return predictions", "Training the model on a server", "Saving the model to a file"],
+                correct: 1,
+                explanation: "After training, a model is just a file. 'Serving' it means wrapping it in an API (like Flask or TensorFlow Serving) so that applications can send it data and get answers back."
+            }
+        ];
+        
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+            questions.forEach((q, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question-container';
+                qDiv.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-number">Question ${index + 1}</div>
+                        <button class="reset-btn" onclick="resetQuestion(${index})">Reset</button>
+                    </div>
+                    <div class="question-text">${q.question}</div>
+                    <div class="options">
+                        ${q.options.map((opt, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)" data-index="${i}">
+                                ${opt}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="explanation" id="explanation-${index}"></div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        function checkAnswer(qIndex, optIndex, element) {
+            if (element.classList.contains('selected')) return; 
+            
+            const question = questions[qIndex];
+            const options = element.parentElement.children;
+            
+            for (let opt of options) {
+                opt.classList.add('selected');
+                if (opt.dataset.index == question.correct) {
+                    opt.classList.add('correct'); 
+                }
+            }
+            
+            const explanationDiv = document.getElementById(`explanation-${qIndex}`);
+            if (optIndex === question.correct) {
+                element.classList.add('correct');
+                explanationDiv.className = 'explanation correct';
+                explanationDiv.innerHTML = `<strong>✓ Correct!</strong><br>${question.explanation}`;
+            } else {
+                element.classList.add('incorrect');
+                explanationDiv.className = 'explanation incorrect';
+                explanationDiv.innerHTML = `<strong>✗ Incorrect.</strong><br>${question.explanation}`;
+            }
+            explanationDiv.style.display = 'block';
+        }
+
+        function resetQuestion(index) {
+            const container = document.getElementById('questions-container').children[index];
+            const options = container.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.className = 'option';
+            });
+            const explanation = document.getElementById(`explanation-${index}`);
+            explanation.style.display = 'none';
+        }
+
+        renderQuestions();
+    </script>
+</body>
+</html>

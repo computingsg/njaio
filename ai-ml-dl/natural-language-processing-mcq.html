@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP MCQs - National Junior AI Olympiad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #45b7d1 0%, #2980b9 100%); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; text-align: center; padding: 30px 20px; }
+        .header h1 { margin: 0; font-size: 2em; }
+        .content { padding: 30px; }
+        .back-btn { background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; text-decoration: none; display: inline-block; margin-bottom: 20px; transition: all 0.3s ease; }
+        .back-btn:hover { background: #5a6268; transform: translateY(-2px); }
+        .question-container { background: #f8f9fa; border-radius: 12px; padding: 25px; margin-bottom: 25px; border-left: 5px solid #45b7d1; }
+        .question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .question-number { font-weight: 600; color: #45b7d1; }
+        .question-text { font-size: 1.1em; margin-bottom: 20px; color: #2c3e50; }
+        .options { display: grid; gap: 12px; }
+        .option { background: white; border: 2px solid #e9ecef; border-radius: 8px; padding: 15px; cursor: pointer; transition: all 0.3s ease; }
+        .option:hover { border-color: #45b7d1; background: #e0f7fa; }
+        .option.selected.correct { border-color: #4caf50; background: #e8f5e8; }
+        .option.selected.incorrect { border-color: #f44336; background: #ffeaea; }
+        .explanation { margin-top: 15px; padding: 15px; border-radius: 8px; display: none; }
+        .explanation.correct { background: #e8f5e8; border-left: 4px solid #4caf50; color: #2e7d32; }
+        .explanation.incorrect { background: #ffeaea; border-left: 4px solid #f44336; color: #c62828; }
+        .reset-btn { background: #ff9800; color: white; border: none; padding: 5px 10px; border-radius: 15px; cursor: pointer; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>NLP Practice</h1>
+            <p>Test your knowledge of language understanding</p>
+        </div>
+        <div class="content">
+            <a href="natural-language-processing.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to NLP</a>
+            <div id="questions-container"></div>
+        </div>
+    </div>
+    <script>
+        const questions = [
+            {
+                question: "What is Tokenization in NLP?",
+                options: ["Encrypting text into secure tokens", "Breaking text into smaller units like words or subwords", "Converting text to speech", "Translating text to another language"],
+                correct: 1,
+                explanation: "Tokenization is the first step in processing text, where a sentence like 'AI is cool' is split into tokens ['AI', 'is', 'cool']. This turns unstructured text into discrete elements the model can process."
+            },
+            {
+                question: "What is the purpose of Word Embeddings (e.g., Word2Vec, GloVe)?",
+                options: ["To compress text files", "To represent words as dense vectors where similar words have similar vector values", "To correct spelling mistakes", "To sort words alphabetically"],
+                correct: 1,
+                explanation: "Embeddings map words to a vector space where semantic relationships are preserved. Example: The vector for 'King' minus 'Man' plus 'Woman' results in a vector very close to 'Queen'."
+            },
+            {
+                question: "What key mechanism makes Transformer models (like BERT and GPT) so effective?",
+                options: ["They read text strictly from left to right", "Self-Attention mechanism, allowing the model to weigh the importance of different words in a sentence regardless of distance", "They use only CPU for processing", "They memorize every sentence they have ever seen"],
+                correct: 1,
+                explanation: "Self-Attention allows the model to understand context by relating every word to every other word. Example: In 'The animal didn't cross the street because **it** was too tired', attention helps the model understand that 'it' refers to 'the animal', not 'the street'."
+            },
+            {
+                question: "What is the goal of Sentiment Analysis?",
+                options: ["To detect the language of the text", "To determine the emotional tone (positive, negative, neutral) behind a text", "To summarize a long article", "To generate a response to a question"],
+                correct: 1,
+                explanation: "Sentiment analysis classifies the subjective opinion in text. Example: Analyzing product reviews to determine if customers are happy (positive) or angry (negative) about a new feature."
+            },
+            {
+                question: "What does 'Large Language Model' (LLM) refer to?",
+                options: ["A model that can only process long words", "A neural network trained on vast amounts of text data capable of understanding and generating human-like text", "A database of all dictionary words", "A model that takes up a lot of hard drive space but does simple tasks"],
+                correct: 1,
+                explanation: "LLMs like GPT-4 are 'large' both in terms of parameter count (billions) and the size of their training data (trillions of tokens), enabling them to perform a wide range of tasks from coding to creative writing."
+            }
+        ];
+        
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+            questions.forEach((q, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question-container';
+                qDiv.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-number">Question ${index + 1}</div>
+                        <button class="reset-btn" onclick="resetQuestion(${index})">Reset</button>
+                    </div>
+                    <div class="question-text">${q.question}</div>
+                    <div class="options">
+                        ${q.options.map((opt, i) => `
+                            <div class="option" onclick="checkAnswer(${index}, ${i}, this)" data-index="${i}">
+                                ${opt}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="explanation" id="explanation-${index}"></div>
+                `;
+                container.appendChild(qDiv);
+            });
+        }
+
+        function checkAnswer(qIndex, optIndex, element) {
+            if (element.classList.contains('selected')) return; 
+            
+            const question = questions[qIndex];
+            const options = element.parentElement.children;
+            
+            for (let opt of options) {
+                opt.classList.add('selected');
+                if (opt.dataset.index == question.correct) {
+                    opt.classList.add('correct'); 
+                }
+            }
+            
+            const explanationDiv = document.getElementById(`explanation-${qIndex}`);
+            if (optIndex === question.correct) {
+                element.classList.add('correct');
+                explanationDiv.className = 'explanation correct';
+                explanationDiv.innerHTML = `<strong>✓ Correct!</strong><br>${question.explanation}`;
+            } else {
+                element.classList.add('incorrect');
+                explanationDiv.className = 'explanation incorrect';
+                explanationDiv.innerHTML = `<strong>✗ Incorrect.</strong><br>${question.explanation}`;
+            }
+            explanationDiv.style.display = 'block';
+        }
+
+        function resetQuestion(index) {
+            const container = document.getElementById('questions-container').children[index];
+            const options = container.querySelectorAll('.option');
+            options.forEach(opt => {
+                opt.className = 'option';
+            });
+            const explanation = document.getElementById(`explanation-${index}`);
+            explanation.style.display = 'none';
+        }
+
+        renderQuestions();
+    </script>
+</body>
+</html>

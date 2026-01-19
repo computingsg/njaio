@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability - National Junior AI Olympiad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header h1 i {
+            color: #ff6b6b;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #ff6b6b;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px 24px;
+            border: 2px solid #ff6b6b;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            transform: translateX(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6b6b;
+            padding-left: 15px;
+        }
+
+        .content-section p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b6b;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.15);
+        }
+
+        .topic-card:hover::before {
+            opacity: 1;
+        }
+
+        .topic-card h3 {
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic-card h3 i {
+            color: #ff6b6b;
+            font-size: 1.3rem;
+        }
+
+        .topic-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i>Back to Home</a>
+        
+        <div class="header">
+            <h1><i class="fas fa-dice"></i>Probability</h1>
+            <p>The Science of Uncertainty and Data</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>Probability theory is the branch of mathematics concerned with probability. In AI and machine learning, probability provides the framework for dealing with uncertainty, making predictions, and learning from data.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3><i class="fas fa-dice"></i>Basic Probability</h3>
+                    <p>Events, sample spaces, and fundamental probability rules.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-question-circle"></i>Conditional Probability</h3>
+                    <p>Bayes' theorem and probability under given conditions.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-chart-bar"></i>Probability Distributions</h3>
+                    <p>Discrete and continuous distributions, normal, binomial, and Poisson.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-random"></i>Random Variables</h3>
+                    <p>Expected values, variance, and moments of distributions.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-chart-line"></i>Statistical Inference</h3>
+                    <p>Estimation, hypothesis testing, and confidence intervals.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-brain"></i>Bayesian Methods</h3>
+                    <p>Prior and posterior distributions, Bayesian learning.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Importance in AI</h2>
+            <p>Probability is fundamental to machine learning as it provides the mathematical foundation for dealing with uncertainty in data. From classification algorithms to generative models, probability theory helps AI systems make informed decisions under uncertainty and learn patterns from noisy data.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+            <a href="probability-mcq.html" class="back-link" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; transform: none; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);">
+                <i class="fas fa-clipboard-check" style="margin-right: 10px;"></i> Take Practice Quiz
+            </a>
+        </div>
+    </div>
+</body>
+</html>

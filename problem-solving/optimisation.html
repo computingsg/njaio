@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimisation - National Junior AI Olympiad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f9ca24 0%, #f0932b 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header h1 i {
+            color: #f9ca24;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #f9ca24;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px 24px;
+            border: 2px solid #f9ca24;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #f9ca24, #f0932b);
+            color: white;
+            transform: translateX(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(249, 202, 36, 0.3);
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #f9ca24;
+            padding-left: 15px;
+        }
+
+        .content-section p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #f9ca24;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f9ca24, #f0932b);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(249, 202, 36, 0.15);
+        }
+
+        .topic-card:hover::before {
+            opacity: 1;
+        }
+
+        .topic-card h3 {
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic-card h3 i {
+            color: #f9ca24;
+            font-size: 1.3rem;
+        }
+
+        .topic-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i>Back to Home</a>
+        
+        <div class="header">
+            <h1><i class="fas fa-chart-line"></i>Optimisation</h1>
+            <p>Finding the Best Solutions to Problems</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>Optimization is the process of finding the best solution from a set of possible alternatives. In AI and machine learning, optimization algorithms are used to minimize loss functions and find optimal model parameters.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3><i class="fas fa-level-down-alt"></i>Gradient Descent</h3>
+                    <p>First-order iterative optimization algorithm.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-random"></i>Stochastic Optimization</h3>
+                    <p>Sampling-based approaches for large-scale problems.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-ban"></i>Constrained Optimization</h3>
+                    <p>Optimization with constraints and boundaries.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-shapes"></i>Convex Optimization</h3>
+                    <p>Optimization of convex functions with guaranteed global optima.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-sliders-h"></i>Hyperparameter Tuning</h3>
+                    <p>Grid search, random search, and Bayesian optimization.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-balance-scale"></i>Multi-objective Optimization</h3>
+                    <p>Balancing multiple competing objectives.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Sample Code</h2>
+            <div class="code-example">
+def gradient_descent(loss_func, gradient_func, theta0, learning_rate=0.01, max_iterations=1000):
+    """Simple gradient descent implementation for minimizing loss"""
+    theta = theta0
+    
+    for i in range(max_iterations):
+        grad = gradient_func(theta)
+        theta_new = theta - learning_rate * grad
+        
+        # Check convergence
+        if abs(theta_new - theta) < 1e-6:
+            break
+        
+        theta = theta_new
+    
+    return theta, loss_func(theta)
+
+# Example: minimize loss L(w) = w^2 + 2w + 1
+def loss(w):
+    return w**2 + 2*w + 1
+
+def gradient(w):
+    return 2*w + 2
+
+optimal_w, min_loss = gradient_descent(loss, gradient, theta0=5)
+print(f"Optimal weight: {optimal_w:.4f}, Minimum Loss: {min_loss:.4f}")
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Importance in AI</h2>
+            <p>Optimization is at the heart of machine learning. Every ML algorithm uses optimization to find the best model parameters. Understanding optimization helps in choosing appropriate algorithms, tuning hyperparameters, and improving model performance.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+            <a href="optimisation-mcq.html" class="back-link" style="background: linear-gradient(135deg, #f9ca24, #f0932b); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; transform: none; box-shadow: 0 4px 15px rgba(249, 202, 36, 0.4);">
+                <i class="fas fa-clipboard-check" style="margin-right: 10px;"></i> Take Practice Quiz
+            </a>
+        </div>
+    </div>
+</body>
+</html>
