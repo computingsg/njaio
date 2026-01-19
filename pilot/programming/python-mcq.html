@@ -35,7 +35,10 @@
             <p>Test your knowledge of the language of AI</p>
         </div>
         <div class="content">
-            <a href="python.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Python</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="python.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Python</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,32 +46,32 @@
         const questions = [
             {
                 question: "What is Python?",
-                options: ["A snake", "A compiled language like C++", "A high-level interpreted programming language", "A database"],
-                correct: 2,
+                options: ["A high-level interpreted programming language", "A snake", "A compiled language like C++", "A database"],
+                correct: 0,
                 explanation: "Python is a popular high-level programming language known for its readability and versatility."
             },
             {
                 question: "How do you print 'Hello World' in Python?",
-                options: ["echo 'Hello World'", "print('Hello World')", "System.out.println('Hello World')", "console.log('Hello World')"],
-                correct: 1,
+                options: ["echo 'Hello World'", "System.out.println('Hello World')", "print('Hello World')", "console.log('Hello World')"],
+                correct: 2,
                 explanation: "The print() function is used to output text to the console in Python."
             },
             {
                 question: "Which symbol is used for comments in Python?",
-                options: ["//", "/* */", "#", "--"],
-                correct: 2,
+                options: ["//", "/* */", "--", "#"],
+                correct: 3,
                 explanation: "In Python, the hash symbol (#) is used to start a single-line comment."
             },
             {
                 question: "What is a list in Python?",
-                options: ["A collection of ordered items", "A single number", "A function", "A database table"],
-                correct: 0,
+                options: ["A single number", "A collection of ordered items", "A function", "A database table"],
+                correct: 1,
                 explanation: "A list is a mutable, ordered sequence of items, defined using square brackets []."
             },
             {
                 question: "Why is Python popular for AI?",
-                options: ["It is the fastest language", "It has a large ecosystem of libraries like NumPy and PyTorch", "It is built into all computers", "It was created by AI"],
-                correct: 1,
+                options: ["It has a large ecosystem of libraries like NumPy and PyTorch", "It is the fastest language", "It is built into all computers", "It was created by AI"],
+                correct: 0,
                 explanation: "Python's popularity in AI stems from its simplicity and the vast collection of powerful libraries available for data science and machine learning."
             }
         ];

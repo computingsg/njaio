@@ -35,7 +35,10 @@
             <p>Test your knowledge of efficient problem solving</p>
         </div>
         <div class="content">
-            <a href="algorithm-design.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Algorithm Design</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="algorithm-design.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Algorithm Design</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "Why is Big O notation (e.g., O(n)) important in AI algorithm design?",
-                options: ["It tells you the exact number of seconds code will run", "It describes how the runtime scales as the input data size (n) increases", "It measures the amount of electricity used", "It determines the accuracy of the model"],
-                correct: 1,
+                options: ["It tells you the exact number of seconds code will run", "It measures the amount of electricity used", "It describes how the runtime scales as the input data size (n) increases", "It determines the accuracy of the model"],
+                correct: 2,
                 explanation: "In AI, we deal with massive datasets. An O(n²) algorithm might work for 100 items but will fail for 1 million. Knowing the complexity helps choose efficient algorithms for training and inference. Example: Linear search O(n) vs Binary search O(log n)."
             },
             {
                 question: "What is the defining characteristic of a Greedy Algorithm?",
-                options: ["It always finds the global optimal solution", "It makes the locally optimal choice at each step, hoping to find the global optimum", "It uses a lot of memory", "It tries every possible combination"],
-                correct: 1,
+                options: ["It makes the locally optimal choice at each step, hoping to find the global optimum", "It always finds the global optimal solution", "It uses a lot of memory", "It tries every possible combination"],
+                correct: 0,
                 explanation: "Greedy algorithms make the best immediate decision without looking ahead. They are fast but not always perfect. Example: In a 'change making' problem, taking the largest coin first is a greedy strategy."
             },
             {
                 question: "How does the Divide and Conquer strategy apply to processing large AI datasets?",
-                options: ["It divides the team into smaller groups", "It breaks the dataset into smaller chunks, processes them in parallel (e.g., MapReduce), and combines the results", "It deletes half the data to save time", "It fights against other algorithms"],
-                correct: 1,
+                options: ["It divides the team into smaller groups", "It deletes half the data to save time", "It fights against other algorithms", "It breaks the dataset into smaller chunks, processes them in parallel (e.g., MapReduce), and combines the results"],
+                correct: 3,
                 explanation: "Processing terabytes of data on one machine is impossible. Divide and Conquer allows us to split the work across thousands of machines (like in distributed training), process chunks independently, and aggregate the gradients."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "In the K-Nearest Neighbors (K-NN) algorithm, what does 'K' represent?",
-                options: ["The number of classes in the dataset", "The number of neighbors to look at when classifying a new data point", "The number of dimensions in the data", "The kilometers distance"],
-                correct: 1,
+                options: ["The number of classes in the dataset", "The number of dimensions in the data", "The number of neighbors to look at when classifying a new data point", "The kilometers distance"],
+                correct: 2,
                 explanation: "K is a hyperparameter. If K=3, the algorithm looks at the 3 closest data points. If 2 are 'Cats' and 1 is 'Dog', it predicts 'Cat'. Choosing the right K is crucial for balancing noise sensitivity vs smoothing."
             }
         ];

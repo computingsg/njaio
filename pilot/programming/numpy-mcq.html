@@ -35,7 +35,10 @@
             <p>Test your knowledge of numerical computing</p>
         </div>
         <div class="content">
-            <a href="numpy.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to NumPy</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="numpy.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to NumPy</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,32 +46,32 @@
         const questions = [
             {
                 question: "What is the main data structure in NumPy?",
-                options: ["List", "Dictionary", "ndarray (N-dimensional array)", "Tree"],
-                correct: 2,
+                options: ["List", "ndarray (N-dimensional array)", "Dictionary", "Tree"],
+                correct: 1,
                 explanation: "The ndarray is NumPy's primary data structure, designed for efficient storage and manipulation of large datasets."
             },
             {
                 question: "Why is NumPy faster than Python lists?",
-                options: ["It uses C-based implementation and contiguous memory", "It uses magic", "It skips calculations", "It runs on the internet"],
-                correct: 0,
+                options: ["It uses magic", "It skips calculations", "It uses C-based implementation and contiguous memory", "It runs on the internet"],
+                correct: 2,
                 explanation: "NumPy arrays are stored in contiguous memory blocks and operations are implemented in C, allowing for vectorized execution."
             },
             {
                 question: "What is Broadcasting in NumPy?",
-                options: ["Sending data to other computers", "A method to perform arithmetic on arrays of different shapes", "Printing array contents", "Deleting data"],
-                correct: 1,
+                options: ["Sending data to other computers", "Printing array contents", "Deleting data", "A method to perform arithmetic on arrays of different shapes"],
+                correct: 3,
                 explanation: "Broadcasting describes how NumPy treats arrays with different shapes during arithmetic operations."
             },
             {
                 question: "How do you create a 2x3 array of zeros?",
-                options: ["np.zeros(2,3)", "np.zeros([2,3])", "np.create(0, 2, 3)", "np.array(0,0,0,0,0,0)"],
-                correct: 1,
+                options: ["np.zeros([2,3])", "np.zeros(2,3)", "np.create(0, 2, 3)", "np.array(0,0,0,0,0,0)"],
+                correct: 0,
                 explanation: "np.zeros() takes a tuple or list of dimensions to create an array filled with zeros."
             },
             {
                 question: "What is vectorization?",
-                options: ["Drawing lines", "Converting loops into array operations", "Sorting lists", "Removing viruses"],
-                correct: 1,
+                options: ["Drawing lines", "Sorting lists", "Converting loops into array operations", "Removing viruses"],
+                correct: 2,
                 explanation: "Vectorization replaces explicit Python loops with array expressions, which are much faster."
             }
         ];

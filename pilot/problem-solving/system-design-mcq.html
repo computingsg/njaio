@@ -35,7 +35,10 @@
             <p>Test your knowledge of scalable architecture</p>
         </div>
         <div class="content">
-            <a href="system-design.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to System Design</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="system-design.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to System Design</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,32 +46,32 @@
         const questions = [
             {
                 question: "What does 'Scalability' mean in AI system design?",
-                options: ["The ability of the system to get physically larger", "The ability to handle growing amounts of work (data, users) by adding resources", "The ability to measure weight", "The ability to run on old computers"],
-                correct: 1,
+                options: ["The ability to handle growing amounts of work (data, users) by adding resources", "The ability of the system to get physically larger", "The ability to measure weight", "The ability to run on old computers"],
+                correct: 0,
                 explanation: "Scalability ensures your AI app doesn't crash when it goes from 10 users to 10 million. Vertical scaling adds power to one machine; Horizontal scaling adds more machines."
             },
             {
                 question: "Why might you use a Microservices architecture for an AI application?",
-                options: ["To make the application smaller", "To decouple components (e.g., training, inference, UI) so they can be developed, deployed, and scaled independently", "Because it's the only way to write Python code", "To reduce the number of files in the project"],
-                correct: 1,
+                options: ["To make the application smaller", "Because it's the only way to write Python code", "To decouple components (e.g., training, inference, UI) so they can be developed, deployed, and scaled independently", "To reduce the number of files in the project"],
+                correct: 2,
                 explanation: "Instead of one giant 'monolith', microservices break the app into pieces. If the 'Inference Service' is overloaded, you can add more inference servers without touching the 'Training Service'."
             },
             {
                 question: "In a real-time recommendation system, why is low Latency important?",
-                options: ["So the user doesn't have to wait long for a recommendation", "So the system can process millions of users at once", "So the server uses less electricity", "So the recommendations are more accurate"],
-                correct: 0,
+                options: ["So the server uses less electricity", "So the user doesn't have to wait long for a recommendation", "So the system can process millions of users at once", "So the recommendations are more accurate"],
+                correct: 1,
                 explanation: "Latency is the delay before a transfer of data begins following an instruction. In real-time apps, high latency means a laggy experience. Throughput is how *many* requests you can handle per second."
             },
             {
                 question: "What is the primary use case for a Vector Database in AI?",
-                options: ["Storing usernames and passwords", "Efficiently storing and searching high-dimensional vectors (embeddings) for similarity search", "Drawing vector graphics", "Hosting the website HTML"],
-                correct: 1,
+                options: ["Storing usernames and passwords", "Drawing vector graphics", "Hosting the website HTML", "Efficiently storing and searching high-dimensional vectors (embeddings) for similarity search"],
+                correct: 3,
                 explanation: "Standard databases are bad at finding 'similar' things. Vector DBs index the mathematical representation of data (embeddings), allowing you to find 'nearest neighbors' instantly, which is crucial for RAG and semantic search."
             },
             {
                 question: "What does 'Model Serving' refer to?",
-                options: ["A waiter bringing food to a model", "The process of making a trained machine learning model available to receive requests and return predictions", "Training the model on a server", "Saving the model to a file"],
-                correct: 1,
+                options: ["A waiter bringing food to a model", "Training the model on a server", "The process of making a trained machine learning model available to receive requests and return predictions", "Saving the model to a file"],
+                correct: 2,
                 explanation: "After training, a model is just a file. 'Serving' it means wrapping it in an API (like Flask or TensorFlow Serving) so that applications can send it data and get answers back."
             }
         ];

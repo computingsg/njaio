@@ -35,7 +35,10 @@
             <p>Test your understanding of deep learning fundamentals</p>
         </div>
         <div class="content">
-            <a href="neural-networks.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Neural Networks</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="neural-networks.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Neural Networks</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,32 +46,32 @@
         const questions = [
             {
                 question: "What is the primary function of an artificial neuron?",
-                options: ["To store large datasets in memory", "To compute a weighted sum of inputs and apply a non-linear activation", "To automatically label training data", "To visualize the decision boundary of the model"],
-                correct: 1,
+                options: ["To store large datasets in memory", "To automatically label training data", "To visualize the decision boundary of the model", "To compute a weighted sum of inputs and apply a non-linear activation"],
+                correct: 3,
                 explanation: "An artificial neuron mimics a biological neuron by taking input signals, weighting them by importance, summing them up, and passing the result through an activation function to determine the output signal. Example: In predicting house prices, inputs might be 'size' and 'location', weighted by their market value influence."
             },
             {
                 question: "Why do neural networks need non-linear activation functions like ReLU or Sigmoid?",
-                options: ["To ensure all outputs are positive numbers", "To allow the network to learn complex, non-linear patterns", "To prevent the gradients from becoming too large", "To speed up the matrix multiplication operations"],
-                correct: 1,
+                options: ["To allow the network to learn complex, non-linear patterns", "To ensure all outputs are positive numbers", "To prevent the gradients from becoming too large", "To speed up the matrix multiplication operations"],
+                correct: 0,
                 explanation: "Without non-linear activation functions, a neural network would just be a series of linear transformations, equivalent to a single linear regression model. Non-linearity allows it to learn complex boundaries, like separating 'cats' from 'dogs' in images."
             },
             {
                 question: "What is the main goal of the backpropagation algorithm?",
-                options: ["To forward propagate inputs to generate a prediction", "To initialize the weights of the network randomly", "To calculate the gradient of the loss function with respect to each weight", "To reduce the size of the dataset for faster training"],
-                correct: 2,
+                options: ["To forward propagate inputs to generate a prediction", "To calculate the gradient of the loss function with respect to each weight", "To initialize the weights of the network randomly", "To reduce the size of the dataset for faster training"],
+                correct: 1,
                 explanation: "Backpropagation calculates how much each weight contributed to the error (loss). This gradient information is used to update the weights to minimize the error. Example: If the model predicts '0.8' but the truth is '1.0', backprop tells us which weights to increase to get closer to 1.0."
             },
             {
                 question: "Which technique is commonly used to prevent overfitting in deep neural networks?",
-                options: ["Increasing the number of layers significantly", "Dropout (randomly deactivating neurons during training)", "Using a smaller learning rate", "Removing the activation functions"],
-                correct: 1,
+                options: ["Increasing the number of layers significantly", "Using a smaller learning rate", "Dropout (randomly deactivating neurons during training)", "Removing the activation functions"],
+                correct: 2,
                 explanation: "Dropout forces the network to learn robust features by preventing it from relying too heavily on any single neuron. Example: It's like a sports team learning to play well even if their star player sits out a game."
             },
             {
                 question: "What does one 'epoch' represent in neural network training?",
-                options: ["One update of the weights", "One complete pass through the entire training dataset", "The time it takes to train the model", "Processing a single batch of data"],
-                correct: 1,
+                options: ["One complete pass through the entire training dataset", "One update of the weights", "The time it takes to train the model", "Processing a single batch of data"],
+                correct: 0,
                 explanation: "An epoch occurs when the model has seen every example in the training dataset once. Training usually requires multiple epochs to learn effectively. Example: Studying a textbook once (1 epoch) is rarely enough; you often need to read it multiple times."
             }
         ];

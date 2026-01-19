@@ -35,7 +35,10 @@
             <p>Test your knowledge of uncertainty and likelihood</p>
         </div>
         <div class="content">
-            <a href="probability.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Probability</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="probability.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Probability</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,32 +46,32 @@
         const questions = [
             {
                 question: "What is Probability?",
-                options: ["A certainty", "A measure of the likelihood of an event occurring", "A random guess", "A complex number"],
-                correct: 1,
+                options: ["A certainty", "A random guess", "A complex number", "A measure of the likelihood of an event occurring"],
+                correct: 3,
                 explanation: "Probability quantifies uncertainty, measuring how likely an event is to happen between 0 (impossible) and 1 (certain)."
             },
             {
                 question: "What is Conditional Probability?",
-                options: ["The probability of an event given that another event has occurred", "The probability of two independent events", "A probability that changes over time", "A false probability"],
-                correct: 0,
+                options: ["The probability of two independent events", "The probability of an event given that another event has occurred", "A probability that changes over time", "A false probability"],
+                correct: 1,
                 explanation: "Conditional probability P(A|B) measures the likelihood of A happening given that B is known to have happened."
             },
             {
                 question: "What is Bayes' Theorem used for?",
-                options: ["Calculating geometry", "Updating the probability of a hypothesis as more evidence becomes available", "Sorting lists", "Drawing graphs"],
-                correct: 1,
+                options: ["Calculating geometry", "Sorting lists", "Updating the probability of a hypothesis as more evidence becomes available", "Drawing graphs"],
+                correct: 2,
                 explanation: "Bayes' Theorem provides a way to update our beliefs (probabilities) based on new data or evidence."
             },
             {
                 question: "What is a Probability Distribution?",
-                options: ["A way to distribute prizes", "A function that describes the likelihood of obtaining distinct values", "A random scatter plot", "A computer network"],
-                correct: 1,
+                options: ["A function that describes the likelihood of obtaining distinct values", "A way to distribute prizes", "A random scatter plot", "A computer network"],
+                correct: 0,
                 explanation: "A probability distribution lists all possible outcomes and their associated probabilities."
             },
             {
                 question: "Why is Probability important in AI?",
-                options: ["AI models always know the exact answer", "Real-world data is noisy and uncertain", "It helps in coloring images", "It is required by law"],
-                correct: 1,
+                options: ["AI models always know the exact answer", "It helps in coloring images", "It is required by law", "Real-world data is noisy and uncertain"],
+                correct: 3,
                 explanation: "AI operates in the real world where data is often incomplete or noisy, and probability provides the framework to handle this uncertainty."
             }
         ];

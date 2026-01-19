@@ -35,7 +35,10 @@
             <p>Test your skills in finding and fixing errors</p>
         </div>
         <div class="content">
-            <a href="debugging.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Debugging</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="debugging.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Debugging</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "What is debugging?",
-                options: ["Removing insects from your computer", "The process of identifying and removing errors from computer hardware or software", "Writing code faster", "Installing software"],
-                correct: 1,
+                options: ["Removing insects from your computer", "Writing code faster", "Installing software", "The process of identifying and removing errors from computer hardware or software"],
+                correct: 3,
                 explanation: "Debugging is the systematic process of finding and resolving bugs (defects or problems) that prevent correct operation."
             },
             {
                 question: "What is a 'print statement debugging'?",
-                options: ["Printing your code on paper", "Inserting print() statements to track variable values and program flow", "Sending errors to a printer", "Debugging printer drivers"],
-                correct: 1,
+                options: ["Inserting print() statements to track variable values and program flow", "Printing your code on paper", "Sending errors to a printer", "Debugging printer drivers"],
+                correct: 0,
                 explanation: "Print debugging is a simple but effective technique where you output variable values to understand the program state."
             },
             {
                 question: "What is a breakpoint?",
-                options: ["A point where the program stops execution so you can inspect it", "A break in the physical cable", "A syntax error", "A coffee break"],
-                correct: 0,
+                options: ["A break in the physical cable", "A syntax error", "A point where the program stops execution so you can inspect it", "A coffee break"],
+                correct: 2,
                 explanation: "A breakpoint is a marker that tells the debugger to pause execution at a specific line of code."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "Why is logging better than print statements for production code?",
-                options: ["It uses less ink", "It allows you to control verbosity levels and output destinations (file, console)", "It is faster to type", "It is required by Python"],
-                correct: 1,
+                options: ["It uses less ink", "It is faster to type", "It allows you to control verbosity levels and output destinations (file, console)", "It is required by Python"],
+                correct: 2,
                 explanation: "Logging provides a flexible way to record events, with different severity levels (INFO, WARNING, ERROR) and output handlers."
             }
         ];

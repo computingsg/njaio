@@ -35,7 +35,10 @@
             <p>Test your knowledge of language understanding</p>
         </div>
         <div class="content">
-            <a href="natural-language-processing.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to NLP</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="natural-language-processing.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to NLP</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "What is Tokenization in NLP?",
-                options: ["Encrypting text into secure tokens", "Breaking text into smaller units like words or subwords", "Converting text to speech", "Translating text to another language"],
-                correct: 1,
+                options: ["Encrypting text into secure tokens", "Converting text to speech", "Breaking text into smaller units like words or subwords", "Translating text to another language"],
+                correct: 2,
                 explanation: "Tokenization is the first step in processing text, where a sentence like 'AI is cool' is split into tokens ['AI', 'is', 'cool']. This turns unstructured text into discrete elements the model can process."
             },
             {
                 question: "What is the purpose of Word Embeddings (e.g., Word2Vec, GloVe)?",
-                options: ["To compress text files", "To represent words as dense vectors where similar words have similar vector values", "To correct spelling mistakes", "To sort words alphabetically"],
-                correct: 1,
+                options: ["To represent words as dense vectors where similar words have similar vector values", "To compress text files", "To correct spelling mistakes", "To sort words alphabetically"],
+                correct: 0,
                 explanation: "Embeddings map words to a vector space where semantic relationships are preserved. Example: The vector for 'King' minus 'Man' plus 'Woman' results in a vector very close to 'Queen'."
             },
             {
                 question: "What key mechanism makes Transformer models (like BERT and GPT) so effective?",
-                options: ["They read text strictly from left to right", "Self-Attention mechanism, allowing the model to weigh the importance of different words in a sentence regardless of distance", "They use only CPU for processing", "They memorize every sentence they have ever seen"],
-                correct: 1,
+                options: ["They read text strictly from left to right", "They use only CPU for processing", "They memorize every sentence they have ever seen", "Self-Attention mechanism, allowing the model to weigh the importance of different words in a sentence regardless of distance"],
+                correct: 3,
                 explanation: "Self-Attention allows the model to understand context by relating every word to every other word. Example: In 'The animal didn't cross the street because **it** was too tired', attention helps the model understand that 'it' refers to 'the animal', not 'the street'."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "What does 'Large Language Model' (LLM) refer to?",
-                options: ["A model that can only process long words", "A neural network trained on vast amounts of text data capable of understanding and generating human-like text", "A database of all dictionary words", "A model that takes up a lot of hard drive space but does simple tasks"],
-                correct: 1,
+                options: ["A neural network trained on vast amounts of text data capable of understanding and generating human-like text", "A model that can only process long words", "A database of all dictionary words", "A model that takes up a lot of hard drive space but does simple tasks"],
+                correct: 0,
                 explanation: "LLMs like GPT-4 are 'large' both in terms of parameter count (billions) and the size of their training data (trillions of tokens), enabling them to perform a wide range of tasks from coding to creative writing."
             }
         ];

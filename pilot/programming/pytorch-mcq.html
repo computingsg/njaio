@@ -35,7 +35,10 @@
             <p>Test your knowledge of deep learning</p>
         </div>
         <div class="content">
-            <a href="pytorch.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to PyTorch</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="pytorch.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to PyTorch</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "What is PyTorch?",
-                options: ["A database management system", "A deep learning framework for building and training neural networks", "A video game", "A text editor"],
-                correct: 1,
+                options: ["A database management system", "A video game", "A deep learning framework for building and training neural networks", "A text editor"],
+                correct: 2,
                 explanation: "PyTorch is an open-source machine learning library used for applications such as computer vision and natural language processing."
             },
             {
                 question: "What is a Tensor in PyTorch?",
-                options: ["A type of sensor", "A multi-dimensional matrix containing elements of a single data type", "A neural network layer", "A graphics card"],
-                correct: 1,
+                options: ["A multi-dimensional matrix containing elements of a single data type", "A type of sensor", "A neural network layer", "A graphics card"],
+                correct: 0,
                 explanation: "Tensors are the fundamental data structure in PyTorch, similar to NumPy arrays but with GPU support."
             },
             {
                 question: "How do you move a tensor to the GPU?",
-                options: ["tensor.gpu()", "tensor.to('cuda')", "tensor.move('gpu')", "gpu(tensor)"],
-                correct: 1,
+                options: ["tensor.gpu()", "tensor.move('gpu')", "gpu(tensor)", "tensor.to('cuda')"],
+                correct: 3,
                 explanation: "The .to() method is used to move tensors to different devices, such as 'cuda' for GPU or 'cpu'."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "What is nn.Module?",
-                options: ["A file extension", "The base class for all neural network modules in PyTorch", "A variable type", "An error message"],
-                correct: 1,
+                options: ["A file extension", "A variable type", "The base class for all neural network modules in PyTorch", "An error message"],
+                correct: 2,
                 explanation: "nn.Module is the base class for all neural network models. Your custom models should subclass this class."
             }
         ];

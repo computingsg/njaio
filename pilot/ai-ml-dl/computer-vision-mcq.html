@@ -35,7 +35,10 @@
             <p>Test your knowledge of image processing and analysis</p>
         </div>
         <div class="content">
-            <a href="computer-vision.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Computer Vision</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="computer-vision.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Computer Vision</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -49,20 +52,20 @@
             },
             {
                 question: "Why are Convolutional Neural Networks (CNNs) preferred for image tasks over standard dense networks?",
-                options: ["They are faster to train on CPUs", "They can preserve spatial relationships and detect local features like edges", "They require less memory to store the model", "They can process audio files better"],
-                correct: 1,
+                options: ["They can preserve spatial relationships and detect local features like edges", "They are faster to train on CPUs", "They require less memory to store the model", "They can process audio files better"],
+                correct: 0,
                 explanation: "CNNs use filters (kernels) that slide over the image to detect local patterns (edges, textures) regardless of their position, maintaining the spatial structure. Example: A 'cat ear' detector should work whether the cat is in the top-left or bottom-right corner."
             },
             {
                 question: "What is the key difference between Image Classification and Object Detection?",
-                options: ["Classification is for color images, Detection is for black and white", "Classification assigns one label to the whole image; Detection finds and locates multiple objects", "Detection is faster than Classification", "Classification requires video input"],
-                correct: 1,
+                options: ["Classification is for color images, Detection is for black and white", "Classification requires video input", "Detection is faster than Classification", "Classification assigns one label to the whole image; Detection finds and locates multiple objects"],
+                correct: 3,
                 explanation: "Classification answers 'What is in this image?' (e.g., 'Dog'). Detection answers 'Where are the objects?' by drawing bounding boxes around them (e.g., 'Dog at [x,y]')."
             },
             {
                 question: "What is the purpose of Data Augmentation in Computer Vision?",
-                options: ["To increase the resolution of images", "To artificially increase the training dataset size by transforming existing images", "To compress images to save space", "To automatically label images"],
-                correct: 1,
+                options: ["To increase the resolution of images", "To compress images to save space", "To artificially increase the training dataset size by transforming existing images", "To automatically label images"],
+                correct: 2,
                 explanation: "Augmentation creates modified versions of training images (rotating, flipping, zooming) to help the model generalize better and avoid overfitting. Example: A rotated cat is still a cat, so training on rotated versions helps the model recognize cats in any orientation."
             },
             {

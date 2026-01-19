@@ -35,7 +35,10 @@
             <p>Test your knowledge of data visualization</p>
         </div>
         <div class="content">
-            <a href="matplotlib.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Matplotlib</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="matplotlib.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Matplotlib</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "What is Matplotlib?",
-                options: ["A 3D game engine", "A plotting library for creating static, animated, and interactive visualizations", "A math calculator", "A database"],
-                correct: 1,
+                options: ["A plotting library for creating static, animated, and interactive visualizations", "A 3D game engine", "A math calculator", "A database"],
+                correct: 0,
                 explanation: "Matplotlib is the most widely used plotting library in Python for creating visualizations."
             },
             {
                 question: "How do you create a simple line plot?",
-                options: ["plt.line(x, y)", "plt.create(x, y)", "plt.plot(x, y)", "plt.draw(x, y)"],
-                correct: 2,
+                options: ["plt.line(x, y)", "plt.create(x, y)", "plt.draw(x, y)", "plt.plot(x, y)"],
+                correct: 3,
                 explanation: "plt.plot() is the standard function for creating line plots."
             },
             {
                 question: "What does plt.show() do?",
-                options: ["Saves the plot", "Displays the figure", "Deletes the plot", "Hides the window"],
-                correct: 1,
+                options: ["Saves the plot", "Deletes the plot", "Displays the figure", "Hides the window"],
+                correct: 2,
                 explanation: "plt.show() renders the plot and displays it on the screen."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "How do you add a title to a plot?",
-                options: ["plt.title('My Title')", "plt.header('My Title')", "plt.name('My Title')", "plt.text('My Title')"],
-                correct: 0,
+                options: ["plt.header('My Title')", "plt.name('My Title')", "plt.text('My Title')", "plt.title('My Title')"],
+                correct: 3,
                 explanation: "plt.title() sets the title of the current axes."
             }
         ];

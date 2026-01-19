@@ -35,7 +35,10 @@
             <p>Test your knowledge of change and optimization</p>
         </div>
         <div class="content">
-            <a href="calculus.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calculus</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="calculus.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Calculus</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "What is a derivative?",
-                options: ["The area under a curve", "The rate of change of a function", "A type of financial asset", "A matrix operation"],
-                correct: 1,
+                options: ["The rate of change of a function", "The area under a curve", "A type of financial asset", "A matrix operation"],
+                correct: 0,
                 explanation: "The derivative measures how much a function's output changes when its input changes."
             },
             {
                 question: "What is a gradient in machine learning?",
-                options: ["A color transition", "A vector of partial derivatives pointing to the steepest increase", "A type of neural network", "A dataset"],
-                correct: 1,
+                options: ["A color transition", "A type of neural network", "A vector of partial derivatives pointing to the steepest increase", "A dataset"],
+                correct: 2,
                 explanation: "The gradient is a vector that tells us the direction of the steepest ascent of the loss function."
             },
             {
                 question: "What is Gradient Descent used for?",
-                options: ["To increase the error", "To find the minimum of a function (like loss)", "To visualize data", "To sort numbers"],
-                correct: 1,
+                options: ["To increase the error", "To visualize data", "To sort numbers", "To find the minimum of a function (like loss)"],
+                correct: 3,
                 explanation: "Gradient Descent is an optimization algorithm used to minimize the loss function by moving in the direction opposite to the gradient."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "Why is Calculus essential for training Neural Networks?",
-                options: ["It isn't", "It allows us to calculate how to adjust weights to reduce error", "It makes the computer run faster", "It is used for storing data"],
-                correct: 1,
+                options: ["It isn't", "It makes the computer run faster", "It allows us to calculate how to adjust weights to reduce error", "It is used for storing data"],
+                correct: 2,
                 explanation: "Calculus (specifically derivatives) tells us how to update the model's weights to minimize the prediction error."
             }
         ];

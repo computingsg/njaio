@@ -35,7 +35,10 @@
             <p>Test your knowledge of data manipulation</p>
         </div>
         <div class="content">
-            <a href="pandas.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Pandas</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="pandas.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Pandas</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,32 +46,32 @@
         const questions = [
             {
                 question: "What is a DataFrame?",
-                options: ["A 2D labeled data structure like a spreadsheet", "A video file", "A single number", "A 3D model"],
-                correct: 0,
+                options: ["A video file", "A single number", "A 3D model", "A 2D labeled data structure like a spreadsheet"],
+                correct: 3,
                 explanation: "A DataFrame is Pandas' primary data structure, representing tabular data with rows and columns."
             },
             {
                 question: "How do you read a CSV file in Pandas?",
-                options: ["pd.read_csv('file.csv')", "pd.open('file.csv')", "csv.read('file.csv')", "pd.load('file.csv')"],
-                correct: 0,
+                options: ["pd.open('file.csv')", "pd.read_csv('file.csv')", "csv.read('file.csv')", "pd.load('file.csv')"],
+                correct: 1,
                 explanation: "pd.read_csv() is the standard function to load comma-separated values into a DataFrame."
             },
             {
                 question: "What does df.head() do?",
-                options: ["Deletes the first row", "Shows the first 5 rows of the DataFrame", "Shows the columns only", "Calculates the sum"],
-                correct: 1,
+                options: ["Deletes the first row", "Shows the columns only", "Shows the first 5 rows of the DataFrame", "Calculates the sum"],
+                correct: 2,
                 explanation: "df.head() returns the first n rows (default 5) for a quick preview of the data."
             },
             {
                 question: "How do you select a single column 'Age' from DataFrame df?",
-                options: ["df.select('Age')", "df['Age']", "df(Age)", "df.Age()"],
-                correct: 1,
+                options: ["df['Age']", "df.select('Age')", "df(Age)", "df.Age()"],
+                correct: 0,
                 explanation: "Columns can be accessed using dictionary-style indexing df['Age'] or attribute access df.Age."
             },
             {
                 question: "What is the purpose of df.groupby()?",
-                options: ["To sort data", "To group data based on categories for aggregation", "To delete duplicates", "To plot a graph"],
-                correct: 1,
+                options: ["To sort data", "To delete duplicates", "To plot a graph", "To group data based on categories for aggregation"],
+                correct: 3,
                 explanation: "groupby() splits the data into groups based on some criteria, allowing you to apply functions like sum() or mean() to each group."
             }
         ];

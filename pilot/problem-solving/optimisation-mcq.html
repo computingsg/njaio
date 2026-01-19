@@ -35,7 +35,10 @@
             <p>Test your knowledge of improving model performance</p>
         </div>
         <div class="content">
-            <a href="optimisation.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Optimisation</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="optimisation.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Optimisation</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "What is the primary goal of optimisation in machine learning training?",
-                options: ["To make the code look prettier", "To minimize a loss function (error) by adjusting model parameters", "To increase the size of the dataset", "To sort the data alphabetically"],
-                correct: 1,
+                options: ["To make the code look prettier", "To increase the size of the dataset", "To sort the data alphabetically", "To minimize a loss function (error) by adjusting model parameters"],
+                correct: 3,
                 explanation: "Training an AI model is essentially an optimization problem where we try to find the set of weights that results in the lowest possible error on the training data."
             },
             {
                 question: "How does Gradient Descent find the minimum of a function?",
-                options: ["It jumps to random points until it gets lucky", "It calculates the slope (gradient) and takes a step in the opposite direction (downhill)", "It calculates the integral of the function", "It asks the user for the answer"],
-                correct: 1,
+                options: ["It jumps to random points until it gets lucky", "It calculates the integral of the function", "It calculates the slope (gradient) and takes a step in the opposite direction (downhill)", "It asks the user for the answer"],
+                correct: 2,
                 explanation: "Imagine being on a foggy mountain. Gradient descent feels the slope under your feet and takes a step downhill. By repeating this, you eventually reach the bottom (minimum loss)."
             },
             {
                 question: "What happens if your Learning Rate is too high?",
-                options: ["The training will be very slow but precise", "The model might overshoot the minimum and fail to converge (diverge)", "The computer will overheat", "The model will learn too much and overfit immediately"],
-                correct: 1,
+                options: ["The model might overshoot the minimum and fail to converge (diverge)", "The training will be very slow but precise", "The computer will overheat", "The model will learn too much and overfit immediately"],
+                correct: 0,
                 explanation: "The learning rate controls the step size. If the step is too big, you might step right over the valley (minimum) and end up on the other side, potentially bouncing back and forth forever."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "What is a 'Local Minimum' problem in optimization?",
-                options: ["When the algorithm stops at a valley that is not the lowest point in the entire landscape", "When the minimum is too small to see", "When the algorithm runs only on a local computer", "When the error becomes negative"],
-                correct: 0,
+                options: ["When the minimum is too small to see", "When the algorithm runs only on a local computer", "When the error becomes negative", "When the algorithm stops at a valley that is not the lowest point in the entire landscape"],
+                correct: 3,
                 explanation: "In complex landscapes, there are many small valleys (local minima). The algorithm might get stuck in a shallow one, thinking it's the bottom, while the true deepest valley (global minimum) is further away."
             }
         ];

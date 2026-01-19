@@ -35,7 +35,10 @@
             <p>Test your knowledge of traditional algorithms</p>
         </div>
         <div class="content">
-            <a href="classical-ml.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Classical ML</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="classical-ml.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Classical ML</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,32 +46,32 @@
         const questions = [
             {
                 question: "What is Supervised Learning?",
-                options: ["Learning without labels", "Learning with labeled training data", "Learning from rewards", "Learning from books"],
-                correct: 1,
+                options: ["Learning without labels", "Learning from rewards", "Learning with labeled training data", "Learning from books"],
+                correct: 2,
                 explanation: "Supervised learning involves training a model on a labeled dataset, where the desired output is known."
             },
             {
                 question: "What is Regression?",
-                options: ["Predicting a continuous value (like price)", "Predicting a category (like cat/dog)", "Moving backwards", "Deleting data"],
-                correct: 0,
+                options: ["Deleting data", "Predicting a category (like cat/dog)", "Moving backwards", "Predicting a continuous value (like price)"],
+                correct: 3,
                 explanation: "Regression algorithms predict continuous numerical values based on input features."
             },
             {
                 question: "What is Classification?",
-                options: ["Grouping data", "Predicting a category or class label", "Sorting numbers", "Finding outliers"],
-                correct: 1,
+                options: ["Predicting a category or class label", "Grouping data", "Sorting numbers", "Finding outliers"],
+                correct: 0,
                 explanation: "Classification algorithms assign input data into specific categories or classes."
             },
             {
                 question: "What is Overfitting?",
-                options: ["When a model fits the training data too well but fails on new data", "When a model is too simple", "When a model is too slow", "When a model is too large"],
-                correct: 0,
+                options: ["When a model is too simple", "When a model fits the training data too well but fails on new data", "When a model is too slow", "When a model is too large"],
+                correct: 1,
                 explanation: "Overfitting occurs when a model learns the noise in the training data rather than the underlying pattern, leading to poor generalization."
             },
             {
                 question: "What is a Decision Tree?",
-                options: ["A type of flower", "A flowchart-like structure used for decision making", "A neural network", "A database"],
-                correct: 1,
+                options: ["A type of flower", "A database", "A neural network", "A flowchart-like structure used for decision making"],
+                correct: 3,
                 explanation: "A decision tree is a model that makes predictions by following a series of if-then rules represented as a tree structure."
             }
         ];

@@ -35,7 +35,10 @@
             <p>Test your knowledge of AI creativity</p>
         </div>
         <div class="content">
-            <a href="generative-ai.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Generative AI</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="generative-ai.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Generative AI</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,20 +46,20 @@
         const questions = [
             {
                 question: "What distinguishes Generative AI from traditional discriminative AI?",
-                options: ["Generative AI is only for images, Discriminative is for text", "Generative AI creates new content (text, images, audio), while Discriminative AI classifies or predicts labels for existing data", "Generative AI is always more accurate", "Discriminative AI is older and obsolete"],
-                correct: 1,
+                options: ["Generative AI creates new content (text, images, audio), while Discriminative AI classifies or predicts labels for existing data", "Generative AI is only for images, Discriminative is for text", "Generative AI is always more accurate", "Discriminative AI is older and obsolete"],
+                correct: 0,
                 explanation: "Discriminative models draw boundaries between classes (e.g., 'Cat' vs 'Dog'). Generative models learn the distribution of the data to create *new* instances (e.g., drawing a new cat that never existed)."
             },
             {
                 question: "How do Generative Adversarial Networks (GANs) work?",
-                options: ["A single network tries to memorize the training data", "Two networks (Generator and Discriminator) compete: one creates fakes, the other tries to detect them", "They use genetic algorithms to evolve solutions", "They collaborate to sort data"],
-                correct: 1,
+                options: ["A single network tries to memorize the training data", "They use genetic algorithms to evolve solutions", "Two networks (Generator and Discriminator) compete: one creates fakes, the other tries to detect them", "They collaborate to sort data"],
+                correct: 2,
                 explanation: "The Generator tries to fool the Discriminator with realistic fake data. The Discriminator tries to distinguish real from fake. This competition drives both to improve, resulting in highly realistic outputs."
             },
             {
                 question: "What is the core idea behind Diffusion Models (like Stable Diffusion)?",
-                options: ["They diffuse knowledge across a network", "They learn to reverse a process of gradually adding noise to an image until it creates a clear image from pure noise", "They spread pixels randomly", "They combine multiple images into one"],
-                correct: 1,
+                options: ["They diffuse knowledge across a network", "They spread pixels randomly", "They combine multiple images into one", "They learn to reverse a process of gradually adding noise to an image until it creates a clear image from pure noise"],
+                correct: 3,
                 explanation: "Diffusion models are trained to 'denoise' data. To generate an image, they start with random static (noise) and iteratively refine it to match a text prompt, effectively 'sculpting' the image from chaos."
             },
             {
@@ -67,8 +70,8 @@
             },
             {
                 question: "What is 'Prompt Engineering'?",
-                options: ["Designing the physical hardware for AI chips", "Crafting specific input queries to guide a Generative AI model to produce the best possible output", "Writing Python code to build a model", "Engineering prompts for theatre plays"],
-                correct: 1,
+                options: ["Designing the physical hardware for AI chips", "Writing Python code to build a model", "Crafting specific input queries to guide a Generative AI model to produce the best possible output", "Engineering prompts for theatre plays"],
+                correct: 2,
                 explanation: "Since generative models are sensitive to how instructions are phrased, 'Prompt Engineering' involves iterating on the text input (context, constraints, examples) to get the desired result."
             }
         ];

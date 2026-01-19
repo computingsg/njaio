@@ -35,7 +35,10 @@
             <p>Test your knowledge of vectors and matrices</p>
         </div>
         <div class="content">
-            <a href="linear-algebra.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Linear Algebra</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <a href="linear-algebra.html" class="back-btn" style="margin-bottom: 0;"><i class="fas fa-arrow-left"></i> Back to Linear Algebra</a>
+                <a href="../index.html" class="back-btn" style="background: #2c3e50; margin-bottom: 0;"><i class="fas fa-home"></i> Home</a>
+            </div>
             <div id="questions-container"></div>
         </div>
     </div>
@@ -43,26 +46,26 @@
         const questions = [
             {
                 question: "What is a vector in the context of AI?",
-                options: ["A geometric shape", "An ordered list of numbers representing data", "A type of computer virus", "A random number"],
-                correct: 1,
+                options: ["A geometric shape", "A type of computer virus", "A random number", "An ordered list of numbers representing data"],
+                correct: 3,
                 explanation: "In AI, vectors are used to represent data points, where each number corresponds to a feature."
             },
             {
                 question: "What is the result of adding two vectors of the same size?",
-                options: ["A single number", "A matrix", "A new vector where corresponding elements are added", "It is impossible"],
-                correct: 2,
+                options: ["A new vector where corresponding elements are added", "A single number", "A matrix", "It is impossible"],
+                correct: 0,
                 explanation: "Vector addition is performed element-wise, resulting in a new vector of the same dimension."
             },
             {
                 question: "What does a matrix represent in Machine Learning?",
-                options: ["A dataset where rows are samples and columns are features", "A complex mathematical equation", "A computer screen", "A video game level"],
-                correct: 0,
+                options: ["A complex mathematical equation", "A dataset where rows are samples and columns are features", "A computer screen", "A video game level"],
+                correct: 1,
                 explanation: "Matrices are the standard way to represent datasets in ML, with rows as samples and columns as features."
             },
             {
                 question: "What is a dot product of two vectors?",
-                options: ["A new vector", "A scalar (single number) obtained by multiplying corresponding elements and summing them", "A matrix", "A division operation"],
-                correct: 1,
+                options: ["A new vector", "A matrix", "A scalar (single number) obtained by multiplying corresponding elements and summing them", "A division operation"],
+                correct: 2,
                 explanation: "The dot product takes two vectors and returns a single number (scalar), which is a measure of their similarity."
             },
             {
