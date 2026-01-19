@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - National Junior AI Olympiad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header h1 i {
+            color: #4ecdc4;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 30px;
+            color: #4ecdc4;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 12px 24px;
+            border: 2px solid #4ecdc4;
+            border-radius: 25px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            transform: translateX(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+        }
+
+        .back-link i {
+            margin-right: 8px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ecdc4;
+            padding-left: 15px;
+        }
+
+        .content-section p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #4ecdc4;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.15);
+        }
+
+        .topic-card:hover::before {
+            opacity: 1;
+        }
+
+        .topic-card h3 {
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+
+        .topic-card h3 i {
+            color: #4ecdc4;
+            font-size: 1.3rem;
+        }
+
+        .topic-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i>Back to Home</a>
+        
+        <div class="header">
+            <h1><i class="fab fa-python"></i>Python</h1>
+            <p>The Language of AI and Machine Learning</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It has become the de facto language for AI and machine learning due to its extensive ecosystem of libraries and frameworks.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3><i class="fas fa-code"></i>Basic Syntax</h3>
+                    <p>Variables, data types, operators, and control structures.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-database"></i>Data Structures</h3>
+                    <p>Lists, dictionaries, tuples, and sets for organizing data.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-cogs"></i>Functions & Modules</h3>
+                    <p>Creating reusable code and organizing programs.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-cube"></i>Object-Oriented Programming</h3>
+                    <p>Classes, objects, inheritance, and polymorphism.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-file-alt"></i>File Handling</h3>
+                    <p>Reading and writing files, working with CSV and JSON.</p>
+                </div>
+                <div class="topic-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i>Error Handling</h3>
+                    <p>Exception handling and debugging techniques.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Sample Code</h2>
+            <div class="code-example">
+# Basic Python example for data processing
+def process_data(numbers):
+    """Process a list of numbers"""
+    total = sum(numbers)
+    average = total / len(numbers)
+    return {
+        'sum': total,
+        'average': average,
+        'count': len(numbers)
+    }
+
+# Using the function
+data = [1, 2, 3, 4, 5]
+result = process_data(data)
+print(f"Results: {result}")
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Importance in AI</h2>
+            <p>Python's simplicity and powerful libraries make it ideal for AI development. Its syntax is close to pseudocode, making algorithms easy to implement and understand. The vast ecosystem of AI libraries like TensorFlow, PyTorch, and scikit-learn makes Python the go-to choice for AI practitioners.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+            <a href="python-mcq.html" class="back-link" style="background: linear-gradient(135deg, #4ecdc4, #44a08d); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; transform: none; box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);">
+                <i class="fas fa-clipboard-check" style="margin-right: 10px;"></i> Take Practice Quiz
+            </a>
+        </div>
+    </div>
+</body>
+</html>

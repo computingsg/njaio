@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas - National Junior AI Olympiad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #4ecdc4;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: 2px solid #4ecdc4;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background-color: #4ecdc4;
+            color: white;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ecdc4;
+            padding-left: 15px;
+        }
+
+        .content-section p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .topic-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4ecdc4;
+        }
+
+        .topic-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .topic-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .code-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Home</a>
+        
+        <div class="header">
+            <h1>Pandas</h1>
+            <p>Data Analysis and Manipulation Library</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Overview</h2>
+            <p>Pandas is a powerful data manipulation and analysis library for Python. It provides data structures and functions needed to work with structured data seamlessly.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Key Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3>DataFrames</h3>
+                    <p>Creating and manipulating tabular data structures.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Data Cleaning</h3>
+                    <p>Handling missing values, duplicates, and data type conversions.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Data Selection</h3>
+                    <p>Filtering, slicing, and selecting data efficiently.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Groupby Operations</h3>
+                    <p>Grouping data and performing aggregate operations.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Merging & Joining</h3>
+                    <p>Combining datasets using various join operations.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Time Series</h3>
+                    <p>Working with date and time data effectively.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Sample Code</h2>
+            <div class="code-example">
+import pandas as pd
+
+# Creating a DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'Score': [85, 92, 78]
+}
+df = pd.DataFrame(data)
+
+# Basic operations
+mean_age = df['Age'].mean()
+high_scores = df[df['Score'] > 80]
+
+print(f"Mean age: {mean_age}")
+print("High scores:")
+print(high_scores)
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Importance in AI</h2>
+            <p>Pandas is essential for data preprocessing and feature engineering in AI projects. It provides efficient tools for cleaning, transforming, and analyzing datasets before feeding them into machine learning algorithms.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+            <a href="pandas-mcq.html" class="back-link" style="background: linear-gradient(135deg, #4ecdc4, #44a08d); color: white; border: none; padding: 15px 30px; font-size: 1.2rem; transform: none; box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);">
+                <i class="fas fa-clipboard-check" style="margin-right: 10px;"></i> Take Practice Quiz
+            </a>
+        </div>
+    </div>
+</body>
+</html>
