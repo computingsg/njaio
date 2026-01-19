@@ -46,13 +46,13 @@
         const questions = [
             {
                 question: "What is PyTorch?",
-                options: ["A database management system", "A video game", "A deep learning framework for building and training neural networks", "A text editor"],
+                options: ["A relational database management system", "A popular video game engine", "A deep learning framework for building and training neural networks", "A code editor for Python developers"],
                 correct: 2,
                 explanation: "PyTorch is an open-source machine learning library used for applications such as computer vision and natural language processing."
             },
             {
                 question: "What is a Tensor in PyTorch?",
-                options: ["A multi-dimensional matrix containing elements of a single data type", "A type of sensor", "A neural network layer", "A graphics card"],
+                options: ["A multi-dimensional matrix containing elements of a single data type", "A physical sensor used in robotics", "A layer in a neural network", "A specialized graphics processing unit"],
                 correct: 0,
                 explanation: "Tensors are the fundamental data structure in PyTorch, similar to NumPy arrays but with GPU support."
             },
@@ -64,15 +64,45 @@
             },
             {
                 question: "What does autograd do?",
-                options: ["Automatically corrects spelling", "Automatic differentiation for all operations on tensors", "Automatically draws graphs", "Automatically saves files"],
+                options: ["Automatically corrects syntax errors", "Automatic differentiation for all operations on tensors", "Automatically generates graphs from data", "Automatically saves model checkpoints"],
                 correct: 1,
                 explanation: "PyTorch's autograd package provides automatic differentiation for all operations on Tensors, essential for backpropagation."
             },
             {
                 question: "What is nn.Module?",
-                options: ["A file extension", "A variable type", "The base class for all neural network modules in PyTorch", "An error message"],
+                options: ["A configuration file format", "A variable type for integers", "The base class for all neural network modules in PyTorch", "An error handling mechanism"],
                 correct: 2,
                 explanation: "nn.Module is the base class for all neural network models. Your custom models should subclass this class."
+            },
+            {
+                question: "What does 'requires_grad=True' mean for a Tensor?",
+                options: ["It tracks operations on the tensor to calculate gradients later (for backpropagation)", "It changes the color of the tensor output", "It permanently deletes the tensor from memory", "It marks the tensor as read-only"],
+                correct: 0,
+                explanation: "This flag tells PyTorch to build a computational graph for this tensor, allowing it to automatically calculate derivatives during the backward pass."
+            },
+            {
+                question: "What is the role of an 'Optimizer' (like SGD or Adam)?",
+                options: ["To define the architecture of the neural network", "To load and preprocess the dataset", "To update the model's weights based on the gradients to reduce the loss", "To visualize the training results"],
+                correct: 2,
+                explanation: "The optimizer implements the specific update rule (like Gradient Descent) to adjust the parameters of the network."
+            },
+            {
+                question: "Which line of code calculates the gradients?",
+                options: ["optimizer.step()", "loss.backward()", "model.forward()", "data.load()"],
+                correct: 1,
+                explanation: "Calling .backward() on the loss tensor computes the gradient of the loss with respect to all tensors that have requires_grad=True."
+            },
+            {
+                question: "Why do we call 'model.train()' before training?",
+                options: ["To assign a name to the model", "To save the current state of the model", "To validate the model architecture", "To set the model to training mode (enabling Dropout and Batch Normalization layers)"],
+                correct: 3,
+                explanation: "Some layers like Dropout behave differently during training vs evaluation. model.train() ensures they work correctly during the learning phase."
+            },
+            {
+                question: "What is a DataLoader used for?",
+                options: ["To load data in batches, shuffle it, and handle parallel processing", "To download datasets from the internet", "To clear data from memory", "To visualize data distribution"],
+                correct: 0,
+                explanation: "The DataLoader wraps a Dataset and provides an iterable over the dataset, handling batching, shuffling, and multi-threaded data loading automatically."
             }
         ];
         

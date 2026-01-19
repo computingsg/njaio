@@ -46,19 +46,19 @@
         const questions = [
             {
                 question: "What is the primary function of an artificial neuron?",
-                options: ["To store large datasets in memory", "To automatically label training data", "To visualize the decision boundary of the model", "To compute a weighted sum of inputs and apply a non-linear activation"],
+                options: ["To store large datasets in permanent memory", "To automatically label and categorize training data", "To visualize the decision boundary of the model graphically", "To compute a weighted sum of inputs and apply a non-linear activation"],
                 correct: 3,
                 explanation: "An artificial neuron mimics a biological neuron by taking input signals, weighting them by importance, summing them up, and passing the result through an activation function to determine the output signal. Example: In predicting house prices, inputs might be 'size' and 'location', weighted by their market value influence."
             },
             {
                 question: "Why do neural networks need non-linear activation functions like ReLU or Sigmoid?",
-                options: ["To allow the network to learn complex, non-linear patterns", "To ensure all outputs are positive numbers", "To prevent the gradients from becoming too large", "To speed up the matrix multiplication operations"],
+                options: ["To allow the network to learn complex, non-linear patterns", "To ensure all outputs are strictly positive numbers", "To prevent the gradients from becoming too large during training", "To speed up the matrix multiplication operations on the GPU"],
                 correct: 0,
                 explanation: "Without non-linear activation functions, a neural network would just be a series of linear transformations, equivalent to a single linear regression model. Non-linearity allows it to learn complex boundaries, like separating 'cats' from 'dogs' in images."
             },
             {
                 question: "What is the main goal of the backpropagation algorithm?",
-                options: ["To forward propagate inputs to generate a prediction", "To calculate the gradient of the loss function with respect to each weight", "To initialize the weights of the network randomly", "To reduce the size of the dataset for faster training"],
+                options: ["To forward propagate inputs to generate a prediction", "To calculate the gradient of the loss function with respect to each weight", "To initialize the weights of the network randomly before training", "To reduce the size of the dataset for faster training"],
                 correct: 1,
                 explanation: "Backpropagation calculates how much each weight contributed to the error (loss). This gradient information is used to update the weights to minimize the error. Example: If the model predicts '0.8' but the truth is '1.0', backprop tells us which weights to increase to get closer to 1.0."
             },
@@ -70,9 +70,39 @@
             },
             {
                 question: "What does one 'epoch' represent in neural network training?",
-                options: ["One complete pass through the entire training dataset", "One update of the weights", "The time it takes to train the model", "Processing a single batch of data"],
+                options: ["One complete pass through the entire training dataset", "One single update of the model's weights", "The total time it takes to train the model", "Processing a single batch of data"],
                 correct: 0,
                 explanation: "An epoch occurs when the model has seen every example in the training dataset once. Training usually requires multiple epochs to learn effectively. Example: Studying a textbook once (1 epoch) is rarely enough; you often need to read it multiple times."
+            },
+            {
+                question: "What are the three main types of layers in a standard neural network?",
+                options: ["First, Middle, Last", "Top, Bottom, Side", "Input, Hidden, Output", "Alpha, Beta, Gamma"],
+                correct: 2,
+                explanation: "The Input layer receives the raw data. The Hidden layers process the features and learn patterns. The Output layer provides the final prediction."
+            },
+            {
+                question: "What is a 'Loss Function' (or Cost Function)?",
+                options: ["A mathematical formula that measures the difference between the model's prediction and the actual target value", "A function that identifies and deletes lost data", "A function that purposefully slows down the training", "A function that generates random numbers for initialization"],
+                correct: 0,
+                explanation: "The loss function (e.g., Mean Squared Error) quantifies how 'wrong' the model is. The goal of training is to minimize this value."
+            },
+            {
+                question: "What happens if the 'Learning Rate' is set too low?",
+                options: ["The model will overfit the training data", "The model weights will explode to infinity", "The model will learn very quickly but inaccurately", "The training process will be very slow and might get stuck"],
+                correct: 3,
+                explanation: "A low learning rate means the model takes tiny steps towards the solution. It will eventually get there, but it might take a very long time (many epochs)."
+            },
+            {
+                question: "What is the purpose of the 'Bias' term in a neuron?",
+                options: ["To introduce unfairness into the model", "To shift the activation function, allowing the model to fit data that doesn't pass through the origin", "To multiply the inputs by a constant factor", "To disable the neuron during training"],
+                correct: 1,
+                explanation: "Just like the 'b' (y-intercept) in the linear equation y = mx + b, the bias allows the neuron's activation to be shifted left or right, giving the model more flexibility to fit the data."
+            },
+            {
+                question: "What is 'Batch Size' in training?",
+                options: ["The total file size of the dataset", "The capacity of the computer's RAM", "The number of training examples used in one iteration to update the weights", "The number of layers in the network"],
+                correct: 2,
+                explanation: "Instead of updating weights after every single image (slow) or after the whole dataset (memory heavy), we often use a 'mini-batch' (e.g., 32 or 64 images) to strike a balance between speed and stability."
             }
         ];
         

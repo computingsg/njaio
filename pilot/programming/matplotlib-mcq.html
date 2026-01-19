@@ -46,7 +46,7 @@
         const questions = [
             {
                 question: "What is Matplotlib?",
-                options: ["A plotting library for creating static, animated, and interactive visualizations", "A 3D game engine", "A math calculator", "A database"],
+                options: ["A library for creating visualizations", "A tool for managing large databases", "A framework for building 3D games", "A calculator for complex math"],
                 correct: 0,
                 explanation: "Matplotlib is the most widely used plotting library in Python for creating visualizations."
             },
@@ -58,13 +58,13 @@
             },
             {
                 question: "What does plt.show() do?",
-                options: ["Saves the plot", "Deletes the plot", "Displays the figure", "Hides the window"],
+                options: ["Saves the plot to a file", "Clears the current plot", "Displays the figure on screen", "Hides the plot window"],
                 correct: 2,
                 explanation: "plt.show() renders the plot and displays it on the screen."
             },
             {
                 question: "What is a 'figure' in Matplotlib?",
-                options: ["A geometric shape", "The top-level container for all plot elements", "A single line", "A data point"],
+                options: ["The specific line or shape being drawn", "The top-level container for all plot elements", "The mathematical formula behind the plot", "The file format used to save the image"],
                 correct: 1,
                 explanation: "The Figure is the container that holds all plot elements, including Axes, titles, and legends."
             },
@@ -73,6 +73,36 @@
                 options: ["plt.header('My Title')", "plt.name('My Title')", "plt.text('My Title')", "plt.title('My Title')"],
                 correct: 3,
                 explanation: "plt.title() sets the title of the current axes."
+            },
+            {
+                question: "Which function is used to create a Scatter Plot?",
+                options: ["plt.scatter(x, y)", "plt.dot(x, y)", "plt.point(x, y)", "plt.map(x, y)"],
+                correct: 0,
+                explanation: "Scatter plots are used to display the relationship between two numerical variables, showing individual data points as dots."
+            },
+            {
+                question: "What is a Histogram used for?",
+                options: ["Plotting the relationship between two variables", "Displaying hierarchical data structures", "Visualizing the distribution of numerical data", "Creating 3D models of geometric shapes"],
+                correct: 2,
+                explanation: "Histograms group data into 'bins' and show the frequency of data points in each bin, helping you see if data is normal, skewed, or uniform."
+            },
+            {
+                question: "How do you create multiple plots in one figure (Subplots)?",
+                options: ["plt.split()", "plt.subplots()", "plt.grid()", "plt.multiple()"],
+                correct: 1,
+                explanation: "plt.subplots() creates a figure and a grid of subplots (axes), allowing you to arrange multiple visualizations side-by-side."
+            },
+            {
+                question: "What function adds a Legend to the plot?",
+                options: ["plt.key()", "plt.map()", "plt.names()", "plt.legend()"],
+                correct: 3,
+                explanation: "plt.legend() displays the labels defined in your plot commands, helping viewers identify which line or color corresponds to which data series."
+            },
+            {
+                question: "How do you save a Matplotlib figure as an image file?",
+                options: ["plt.savefig('filename.png')", "plt.download('filename.png')", "plt.export('filename.png')", "plt.store('filename.png')"],
+                correct: 0,
+                explanation: "plt.savefig() allows you to export your visualization to various formats like PNG, JPG, or PDF for use in reports or presentations."
             }
         ];
         

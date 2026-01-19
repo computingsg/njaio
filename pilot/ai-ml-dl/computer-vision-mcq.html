@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "How does a computer 'see' an image?",
-                options: ["It understands the artistic meaning immediately", "It reads the filename of the image", "It processes a grid of numbers (pixel values) representing colors/brightness", "It scans the screen line by line like a TV"],
+                options: ["It interprets the artistic meaning immediately", "It scans the file extension to understand content", "It processes a grid of numbers (pixel values) representing colors/brightness", "It converts the image into audio waves"],
                 correct: 2,
                 explanation: "Digital images are stored as matrices where each cell contains numerical values (e.g., 0-255) representing the intensity of color channels (Red, Green, Blue). Example: A black-and-white image is just a 2D grid of gray values."
             },
             {
                 question: "Why are Convolutional Neural Networks (CNNs) preferred for image tasks over standard dense networks?",
-                options: ["They can preserve spatial relationships and detect local features like edges", "They are faster to train on CPUs", "They require less memory to store the model", "They can process audio files better"],
+                options: ["They can preserve spatial relationships and detect local features like edges", "They are computationally cheaper for all tasks", "They require significantly less storage space", "They are designed specifically for processing text data"],
                 correct: 0,
                 explanation: "CNNs use filters (kernels) that slide over the image to detect local patterns (edges, textures) regardless of their position, maintaining the spatial structure. Example: A 'cat ear' detector should work whether the cat is in the top-left or bottom-right corner."
             },
             {
                 question: "What is the key difference between Image Classification and Object Detection?",
-                options: ["Classification is for color images, Detection is for black and white", "Classification requires video input", "Detection is faster than Classification", "Classification assigns one label to the whole image; Detection finds and locates multiple objects"],
+                options: ["Classification works on grayscale; Detection works on color", "Classification handles video; Detection handles still images", "Detection is a faster version of Classification", "Classification labels the whole image; Detection locates multiple objects"],
                 correct: 3,
                 explanation: "Classification answers 'What is in this image?' (e.g., 'Dog'). Detection answers 'Where are the objects?' by drawing bounding boxes around them (e.g., 'Dog at [x,y]')."
             },
             {
                 question: "What is the purpose of Data Augmentation in Computer Vision?",
-                options: ["To increase the resolution of images", "To compress images to save space", "To artificially increase the training dataset size by transforming existing images", "To automatically label images"],
+                options: ["To increase the resolution of low-quality images", "To compress images to save storage space", "To artificially increase the training dataset size by transforming existing images", "To automatically generate labels for unlabeled data"],
                 correct: 2,
                 explanation: "Augmentation creates modified versions of training images (rotating, flipping, zooming) to help the model generalize better and avoid overfitting. Example: A rotated cat is still a cat, so training on rotated versions helps the model recognize cats in any orientation."
             },
             {
                 question: "How does Transfer Learning benefit Computer Vision tasks?",
-                options: ["It allows models to transfer data between computers faster", "It allows using a pre-trained model (e.g., on ImageNet) as a starting point for a new task", "It converts images into text descriptions", "It transfers the style of one image to another"],
+                options: ["It speeds up data transfer between servers", "It uses a pre-trained model (e.g., on ImageNet) as a starting point", "It translates text descriptions into images", "It converts color images to grayscale for faster processing"],
                 correct: 1,
                 explanation: "Instead of training from scratch, you can take a model trained on millions of images (like ResNet) and fine-tune it for your specific small dataset. Example: A model that knows how to recognize 'cars' has already learned to detect edges and wheels, which helps it learn to recognize 'trucks' much faster."
+            },
+            {
+                question: "What are RGB channels in a digital image?",
+                options: ["Random, Green, Blue noise patterns", "Red, Gray, Black color spaces", "Red, Green, Blue color components that mix to create all colors", "Real, Generated, Base layers"],
+                correct: 2,
+                explanation: "Most color images are composed of three channels: Red, Green, and Blue. By mixing different intensities of these three primary colors, millions of distinct colors can be represented."
+            },
+            {
+                question: "What is 'Edge Detection' in image processing?",
+                options: ["Identifying the boundaries of objects within an image", "Detecting the physical edges of the monitor", "Cropping the borders of a photograph", "Determining if an image is in focus"],
+                correct: 0,
+                explanation: "Edge detection algorithms look for sharp changes in brightness or color to identify the outlines and boundaries of objects, which is a fundamental step in understanding the image structure."
+            },
+            {
+                question: "What is the purpose of a 'Pooling Layer' (e.g., Max Pooling) in a CNN?",
+                options: ["To increase the color saturation", "To upscale the image resolution", "To reduce the spatial dimensions (downsampling) while keeping important features", "To blend adjacent pixels together"],
+                correct: 2,
+                explanation: "Pooling layers reduce the spatial dimensions of the data (e.g., taking the maximum value in a 2x2 grid). This reduces the computational load and makes the model more robust to small shifts in the image."
+            },
+            {
+                question: "What is Image Segmentation?",
+                options: ["Dividing an image into equal-sized grid blocks", "Classifying each individual pixel as belonging to a specific object or class", "Resizing an image to fit a screen", "Converting a color image to black and white"],
+                correct: 1,
+                explanation: "Unlike simple object detection which draws a box, segmentation colors in the exact shape of the object. Example: In a self-driving car view, painting the road pixels gray, car pixels blue, and pedestrian pixels red."
+            },
+            {
+                question: "Which of these is an ethical concern related to Facial Recognition technology?",
+                options: ["It consumes excessive battery power", "It increases the cost of camera hardware", "It struggles with low-light conditions", "Privacy violation and potential bias against certain demographics"],
+                correct: 3,
+                explanation: "Facial recognition raises privacy concerns about mass surveillance. Additionally, if trained on unbalanced datasets, it may have higher error rates for certain racial or gender groups, leading to unfair outcomes."
             }
         ];
         

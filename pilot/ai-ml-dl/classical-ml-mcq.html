@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What is Supervised Learning?",
-                options: ["Learning without labels", "Learning from rewards", "Learning with labeled training data", "Learning from books"],
+                options: ["Learning patterns from unlabeled data without guidance", "A system where the AI supervises human workers", "Learning with labeled training data (input-output pairs)", "Learning exclusively from text books and manuals"],
                 correct: 2,
                 explanation: "Supervised learning involves training a model on a labeled dataset, where the desired output is known."
             },
             {
                 question: "What is Regression?",
-                options: ["Deleting data", "Predicting a category (like cat/dog)", "Moving backwards", "Predicting a continuous value (like price)"],
-                correct: 3,
+                options: ["Sorting data into distinct categories", "Predicting a continuous numerical value (like price)", "Visualizing data on a 2D plot", "Reducing the dimensionality of a dataset"],
+                correct: 1,
                 explanation: "Regression algorithms predict continuous numerical values based on input features."
             },
             {
                 question: "What is Classification?",
-                options: ["Predicting a category or class label", "Grouping data", "Sorting numbers", "Finding outliers"],
+                options: ["Predicting a category or class label (like spam/not-spam)", "Grouping similar data points together", "Calculating the average of a dataset", "Finding the line of best fit"],
                 correct: 0,
                 explanation: "Classification algorithms assign input data into specific categories or classes."
             },
             {
                 question: "What is Overfitting?",
-                options: ["When a model is too simple", "When a model fits the training data too well but fails on new data", "When a model is too slow", "When a model is too large"],
+                options: ["When a model is too simple to capture the underlying pattern", "When a model fits the training data too well but fails on new data", "When a model takes too long to train", "When the dataset has too many features"],
                 correct: 1,
                 explanation: "Overfitting occurs when a model learns the noise in the training data rather than the underlying pattern, leading to poor generalization."
             },
             {
                 question: "What is a Decision Tree?",
-                options: ["A type of flower", "A database", "A neural network", "A flowchart-like structure used for decision making"],
+                options: ["A hierarchical clustering algorithm", "A database structure for storing logs", "A neural network with tree-like connections", "A flowchart-like model used for decision making"],
                 correct: 3,
                 explanation: "A decision tree is a model that makes predictions by following a series of if-then rules represented as a tree structure."
+            },
+            {
+                question: "What is Unsupervised Learning?",
+                options: ["Learning with fully labeled datasets", "Learning without explicit labels, finding patterns on its own", "Learning by reinforcing good behavior", "Memorizing the training data exactly"],
+                correct: 1,
+                explanation: "Unsupervised learning deals with unlabeled data. The algorithm tries to find hidden structures or patterns, such as grouping similar customers together (clustering)."
+            },
+            {
+                question: "What is the K-Nearest Neighbors (KNN) algorithm used for?",
+                options: ["Only for linear regression tasks", "Exclusively for image segmentation", "Both classification and regression based on similarity", "It is a deep learning architecture"],
+                correct: 2,
+                explanation: "KNN is a simple, versatile algorithm that classifies a new data point based on the majority class of its 'k' nearest neighbors in the feature space."
+            },
+            {
+                question: "Why do we split data into 'Training' and 'Testing' sets?",
+                options: ["To artificially increase the dataset size", "To evaluate model performance on unseen data", "To speed up the training process", "To remove outliers from the data"],
+                correct: 1,
+                explanation: "We train the model on one set of data and test it on a separate, unseen set to ensure it can generalize to new information, rather than just memorizing the training examples."
+            },
+            {
+                question: "In a dataset of house prices, what would be a 'Feature' and what would be a 'Label'?",
+                options: ["Feature: Price; Label: Number of Rooms", "Feature: Number of Rooms; Label: Price", "Both are considered Features", "Both are considered Labels"],
+                correct: 1,
+                explanation: "Features are the inputs (characteristics like size, rooms) used to make predictions. The Label is the output or target variable we want to predict (the price)."
+            },
+            {
+                question: "What does a Confusion Matrix help us evaluate?",
+                options: ["The computational speed of the model", "The complexity of the decision tree", "The performance of a classification model", "The correlation between features"],
+                correct: 2,
+                explanation: "A confusion matrix provides a detailed breakdown of correct and incorrect predictions, helping us understand if the model is confusing specific classes (e.g., predicting 'dog' when it's actually a 'cat')."
             }
         ];
         

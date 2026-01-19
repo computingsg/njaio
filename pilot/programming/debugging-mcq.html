@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What is debugging?",
-                options: ["Removing insects from your computer", "Writing code faster", "Installing software", "The process of identifying and removing errors from computer hardware or software"],
+                options: ["The process of writing code for the first time", "Optimizing code for faster execution", "Installing new software updates", "The process of finding and removing errors"],
                 correct: 3,
                 explanation: "Debugging is the systematic process of finding and resolving bugs (defects or problems) that prevent correct operation."
             },
             {
-                question: "What is a 'print statement debugging'?",
-                options: ["Inserting print() statements to track variable values and program flow", "Printing your code on paper", "Sending errors to a printer", "Debugging printer drivers"],
+                question: "What is 'print statement debugging'?",
+                options: ["Inserting print() statements to track execution flow and variable states", "Printing the source code to paper for manual review", "Sending error logs to a physical printer", "Using the print command to clear memory"],
                 correct: 0,
                 explanation: "Print debugging is a simple but effective technique where you output variable values to understand the program state."
             },
             {
                 question: "What is a breakpoint?",
-                options: ["A break in the physical cable", "A syntax error", "A point where the program stops execution so you can inspect it", "A coffee break"],
+                options: ["A syntax error that breaks the code", "A command that terminates the program immediately", "A marker that pauses program execution for inspection", "A network connection timeout"],
                 correct: 2,
                 explanation: "A breakpoint is a marker that tells the debugger to pause execution at a specific line of code."
             },
             {
                 question: "What does a traceback (or stack trace) tell you?",
-                options: ["The history of your browser", "The sequence of function calls that led to an error", "The memory usage", "The hard drive space"],
+                options: ["The browser history leading to the page", "The sequence of function calls that led to an error", "The current memory usage statistics", "The list of installed libraries"],
                 correct: 1,
                 explanation: "A traceback shows the call stack at the time an exception occurred, helping you locate where the error originated."
             },
             {
                 question: "Why is logging better than print statements for production code?",
-                options: ["It uses less ink", "It is faster to type", "It allows you to control verbosity levels and output destinations (file, console)", "It is required by Python"],
+                options: ["It consumes less memory than print statements", "It executes faster than standard output", "It allows control over severity levels and output destinations", "It automatically fixes simple errors"],
                 correct: 2,
                 explanation: "Logging provides a flexible way to record events, with different severity levels (INFO, WARNING, ERROR) and output handlers."
+            },
+            {
+                question: "What is the difference between a Syntax Error and a Logic Error?",
+                options: ["Syntax errors are harder to find than logic errors", "Syntax errors prevent code execution; Logic errors produce incorrect results", "Logic errors are caused by hardware faults", "Syntax errors occur only in compiled languages"],
+                correct: 1,
+                explanation: "A syntax error is like a typo in a language (e.g., missing a colon). A logic error is like following a recipe correctly but using salt instead of sugar."
+            },
+            {
+                question: "What is 'Rubber Duck Debugging'?",
+                options: ["Explaining code line-by-line to an inanimate object to find logic flaws", "A debugging tool named 'Rubber Duck'", "Writing code while floating in water", "Asking a senior developer for help immediately"],
+                correct: 0,
+                explanation: "By forcing yourself to articulate the problem and your code's logic aloud, you often spot the discrepancy between what you *thought* the code was doing and what it *actually* does."
+            },
+            {
+                question: "Which of these is a common feature of an IDE to help with debugging?",
+                options: ["Automatic code generation for all logic", "Built-in music player for focus", "Social media integration", "Syntax highlighting and intelligent code completion"],
+                correct: 3,
+                explanation: "IDEs like VS Code provide visual cues (red squiggly lines) for errors and suggest valid commands, which helps prevent bugs before you even run the code."
+            },
+            {
+                question: "What is Unit Testing?",
+                options: ["Testing the entire application as a whole", "Manually checking every line of code", "Testing individual components or functions in isolation", "Testing the software on different operating systems"],
+                correct: 2,
+                explanation: "Unit tests verify that small 'units' of code (like a single function) return the expected output for a given input, making it easier to catch bugs when changes are made."
+            },
+            {
+                question: "When you encounter an error message you don't understand, what is a good first step?",
+                options: ["Immediately delete and rewrite the code", "Search the error message online to find similar issues", "Restart the computer and hope it goes away", "Ignore the error and continue coding"],
+                correct: 1,
+                explanation: "Developers constantly rely on community knowledge. It is highly likely that someone else has encountered the exact same error and posted a solution online."
             }
         ];
         

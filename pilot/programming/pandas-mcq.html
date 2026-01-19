@@ -46,7 +46,7 @@
         const questions = [
             {
                 question: "What is a DataFrame?",
-                options: ["A video file", "A single number", "A 3D model", "A 2D labeled data structure like a spreadsheet"],
+                options: ["A video compression format", "A single scalar value", "A 3D graphical model", "A 2D labeled data structure like a spreadsheet"],
                 correct: 3,
                 explanation: "A DataFrame is Pandas' primary data structure, representing tabular data with rows and columns."
             },
@@ -58,7 +58,7 @@
             },
             {
                 question: "What does df.head() do?",
-                options: ["Deletes the first row", "Shows the columns only", "Shows the first 5 rows of the DataFrame", "Calculates the sum"],
+                options: ["Deletes the first row of data", "Shows only the column headers", "Shows the first 5 rows of the DataFrame", "Calculates the sum of the first column"],
                 correct: 2,
                 explanation: "df.head() returns the first n rows (default 5) for a quick preview of the data."
             },
@@ -70,9 +70,39 @@
             },
             {
                 question: "What is the purpose of df.groupby()?",
-                options: ["To sort data", "To delete duplicates", "To plot a graph", "To group data based on categories for aggregation"],
+                options: ["To sort data alphabetically", "To remove duplicate rows", "To visualize data as a graph", "To group data based on categories for aggregation"],
                 correct: 3,
                 explanation: "groupby() splits the data into groups based on some criteria, allowing you to apply functions like sum() or mean() to each group."
+            },
+            {
+                question: "What does df.describe() do?",
+                options: ["Generates descriptive statistics (mean, std, min, max) for numerical columns", "Describes the text content of the dataframe", "Prints the list of column names", "Shows the first row of the dataframe"],
+                correct: 0,
+                explanation: "df.describe() provides a quick statistical summary of your dataset, which is a great first step in Exploratory Data Analysis (EDA)."
+            },
+            {
+                question: "How do you filter a DataFrame to show only rows where column 'A' is greater than 5?",
+                options: ["df.filter('A' > 5)", "df.get('A' > 5)", "df[df['A'] > 5]", "df.where('A' > 5)"],
+                correct: 2,
+                explanation: "This is called 'Boolean Indexing'. df['A'] > 5 creates a mask of True/False values, and passing this mask to df[] selects only the True rows."
+            },
+            {
+                question: "What is the difference between .loc and .iloc?",
+                options: [".loc is faster than .iloc", ".loc selects by Label (name); .iloc selects by Integer Index (position)", ".loc is for selecting columns only", ".iloc is for selecting rows only"],
+                correct: 1,
+                explanation: ".loc['row_name'] uses the actual index label. .iloc[0] uses the zero-based position, regardless of the index name."
+            },
+            {
+                question: "Which function is used to remove rows with missing values (NaN)?",
+                options: ["df.delete()", "df.remove()", "df.clean()", "df.dropna()"],
+                correct: 3,
+                explanation: "df.dropna() removes any row (or column) that contains at least one missing value. Alternatively, df.fillna() can replace them with a value."
+            },
+            {
+                question: "How do you combine two DataFrames based on a common key (similar to SQL JOIN)?",
+                options: ["pd.merge()", "pd.combine()", "pd.add()", "pd.mix()"],
+                correct: 0,
+                explanation: "pd.merge() is a powerful function for joining datasets on specific columns, supporting inner, outer, left, and right joins."
             }
         ];
         

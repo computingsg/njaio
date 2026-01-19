@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What does 'Scalability' mean in AI system design?",
-                options: ["The ability to handle growing amounts of work (data, users) by adding resources", "The ability of the system to get physically larger", "The ability to measure weight", "The ability to run on old computers"],
+                options: ["The ability to handle growing amounts of work (data, users) by adding resources", "The ability of the system to get physically larger in size", "The ability to measure the weight of the hardware", "The ability to run on very old computers"],
                 correct: 0,
                 explanation: "Scalability ensures your AI app doesn't crash when it goes from 10 users to 10 million. Vertical scaling adds power to one machine; Horizontal scaling adds more machines."
             },
             {
                 question: "Why might you use a Microservices architecture for an AI application?",
-                options: ["To make the application smaller", "Because it's the only way to write Python code", "To decouple components (e.g., training, inference, UI) so they can be developed, deployed, and scaled independently", "To reduce the number of files in the project"],
+                options: ["To make the total application size smaller", "Because it's the only way to write Python code", "To decouple components (e.g., training, inference, UI) so they can be developed, deployed, and scaled independently", "To reduce the number of files in the project folder"],
                 correct: 2,
                 explanation: "Instead of one giant 'monolith', microservices break the app into pieces. If the 'Inference Service' is overloaded, you can add more inference servers without touching the 'Training Service'."
             },
             {
                 question: "In a real-time recommendation system, why is low Latency important?",
-                options: ["So the server uses less electricity", "So the user doesn't have to wait long for a recommendation", "So the system can process millions of users at once", "So the recommendations are more accurate"],
+                options: ["So the server consumes less electricity", "So the user doesn't have to wait long for a recommendation", "So the system can process millions of users at once", "So the recommendations are more accurate"],
                 correct: 1,
                 explanation: "Latency is the delay before a transfer of data begins following an instruction. In real-time apps, high latency means a laggy experience. Throughput is how *many* requests you can handle per second."
             },
             {
                 question: "What is the primary use case for a Vector Database in AI?",
-                options: ["Storing usernames and passwords", "Drawing vector graphics", "Hosting the website HTML", "Efficiently storing and searching high-dimensional vectors (embeddings) for similarity search"],
+                options: ["Storing usernames and passwords securely", "Drawing vector graphics for the UI", "Hosting the website HTML files", "Efficiently storing and searching high-dimensional vectors (embeddings) for similarity search"],
                 correct: 3,
                 explanation: "Standard databases are bad at finding 'similar' things. Vector DBs index the mathematical representation of data (embeddings), allowing you to find 'nearest neighbors' instantly, which is crucial for RAG and semantic search."
             },
             {
                 question: "What does 'Model Serving' refer to?",
-                options: ["A waiter bringing food to a model", "Training the model on a server", "The process of making a trained machine learning model available to receive requests and return predictions", "Saving the model to a file"],
+                options: ["A waiter bringing food to a model", "Training the model on a dedicated server", "The process of making a trained machine learning model available to receive requests and return predictions", "Saving the model weights to a file"],
                 correct: 2,
                 explanation: "After training, a model is just a file. 'Serving' it means wrapping it in an API (like Flask or TensorFlow Serving) so that applications can send it data and get answers back."
+            },
+            {
+                question: "What is an API (Application Programming Interface)?",
+                options: ["A robotic arm for automation", "A type of computer screen", "A set of rules and protocols that allows different software applications to communicate with each other", "A specific programming language"],
+                correct: 2,
+                explanation: "APIs define how different software components should interact. For example, a mobile app talks to a weather server via an API to get the forecast."
+            },
+            {
+                question: "What is the role of a Load Balancer?",
+                options: ["To weigh the server hardware", "To distribute incoming network traffic across multiple servers to ensure no single server is overwhelmed", "To balance the colors on the screen", "To manage the database storage"],
+                correct: 1,
+                explanation: "A load balancer acts like a traffic cop, routing user requests to different servers to ensure high availability and reliability of the system."
+            },
+            {
+                question: "What is Caching?",
+                options: ["Storing copies of frequently accessed data in a fast temporary storage location to reduce retrieval time", "Hiding sensitive data from users", "Deleting old data to save space", "Calculating data very slowly"],
+                correct: 0,
+                explanation: "Caching is crucial for performance. Instead of querying a slow database every time, we check the fast cache (RAM) first. It's like keeping your favorite book on your desk instead of the library."
+            },
+            {
+                question: "What is a key difference between SQL and NoSQL databases?",
+                options: ["SQL is for images, NoSQL is for text", "SQL is faster, NoSQL is slower", "SQL has no structure, NoSQL has structure", "SQL uses structured tables with fixed schemas; NoSQL uses flexible schemas (like documents or key-pairs)"],
+                correct: 3,
+                explanation: "SQL (Relational) databases are great for structured data (like banking). NoSQL (Non-relational) databases are better for unstructured or rapidly changing data (like social media posts)."
+            },
+            {
+                question: "Why is Monitoring and Logging important in production?",
+                options: ["To spy on users' personal lives", "To track system health, detect errors, and understand performance issues", "To fill up the hard drive with data", "It is not important for AI systems"],
+                correct: 1,
+                explanation: "Once a system is live, you need to know if it's working. Logs tell you 'what happened', and metrics (monitoring) tell you 'how the system is feeling' (CPU usage, latency)."
             }
         ];
         

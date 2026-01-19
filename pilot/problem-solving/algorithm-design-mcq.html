@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "Why is Big O notation (e.g., O(n)) important in AI algorithm design?",
-                options: ["It tells you the exact number of seconds code will run", "It measures the amount of electricity used", "It describes how the runtime scales as the input data size (n) increases", "It determines the accuracy of the model"],
+                options: ["It tells you the exact number of seconds code will run", "It measures the physical size of the computer chip", "It describes how the runtime scales as the input data size (n) increases", "It determines the color of the output"],
                 correct: 2,
                 explanation: "In AI, we deal with massive datasets. An O(n²) algorithm might work for 100 items but will fail for 1 million. Knowing the complexity helps choose efficient algorithms for training and inference. Example: Linear search O(n) vs Binary search O(log n)."
             },
             {
                 question: "What is the defining characteristic of a Greedy Algorithm?",
-                options: ["It makes the locally optimal choice at each step, hoping to find the global optimum", "It always finds the global optimal solution", "It uses a lot of memory", "It tries every possible combination"],
+                options: ["It makes the locally optimal choice at each step, hoping to find the global optimum", "It exhaustively searches every possible combination", "It is an algorithm that uses excessive amounts of memory", "It learns from past mistakes to improve over time"],
                 correct: 0,
                 explanation: "Greedy algorithms make the best immediate decision without looking ahead. They are fast but not always perfect. Example: In a 'change making' problem, taking the largest coin first is a greedy strategy."
             },
             {
                 question: "How does the Divide and Conquer strategy apply to processing large AI datasets?",
-                options: ["It divides the team into smaller groups", "It deletes half the data to save time", "It fights against other algorithms", "It breaks the dataset into smaller chunks, processes them in parallel (e.g., MapReduce), and combines the results"],
+                options: ["It divides the development team into smaller groups", "It deletes half the data to save processing time", "It uses two competing algorithms to find the best answer", "It breaks the dataset into smaller chunks, processes them in parallel, and combines the results"],
                 correct: 3,
                 explanation: "Processing terabytes of data on one machine is impossible. Divide and Conquer allows us to split the work across thousands of machines (like in distributed training), process chunks independently, and aggregate the gradients."
             },
             {
                 question: "When should you use Dynamic Programming?",
-                options: ["When the problem changes dynamically over time", "When the problem has overlapping subproblems and optimal substructure (e.g., sequence alignment)", "When you want to create dynamic websites", "When you have a very fast computer"],
+                options: ["When the problem changes randomly over time", "When the problem has overlapping subproblems and optimal substructure (e.g., sequence alignment)", "When you want to create interactive websites", "When you have unlimited computational power"],
                 correct: 1,
                 explanation: "DP is an optimization technique that stores the results of expensive function calls and reuses them (memoization). In AI, it's used in algorithms like the Viterbi algorithm for speech recognition."
             },
             {
                 question: "In the K-Nearest Neighbors (K-NN) algorithm, what does 'K' represent?",
-                options: ["The number of classes in the dataset", "The number of dimensions in the data", "The number of neighbors to look at when classifying a new data point", "The kilometers distance"],
+                options: ["The number of distinct classes in the dataset", "The total number of dimensions in the feature space", "The number of neighbors to look at when classifying a new data point", "The distance in kilometers between points"],
                 correct: 2,
                 explanation: "K is a hyperparameter. If K=3, the algorithm looks at the 3 closest data points. If 2 are 'Cats' and 1 is 'Dog', it predicts 'Cat'. Choosing the right K is crucial for balancing noise sensitivity vs smoothing."
+            },
+            {
+                question: "What is Breadth-First Search (BFS) used for?",
+                options: ["Sorting a list of numbers", "Finding the shortest path in an unweighted graph", "Multiplying large matrices efficiently", "Encrypting sensitive data"],
+                correct: 1,
+                explanation: "BFS explores a graph layer by layer, visiting all neighbors of a node before moving deeper. It's guaranteed to find the shortest path in unweighted graphs."
+            },
+            {
+                question: "What is the typical time complexity of efficient sorting algorithms like Merge Sort?",
+                options: ["O(n) - Linear time", "O(n²) - Quadratic time", "O(n log n) - Linearithmic time", "O(1) - Constant time"],
+                correct: 2,
+                explanation: "While simple sorts like Bubble Sort are O(n²), efficient algorithms like Merge Sort and Quick Sort (average case) run in O(n log n), making them much faster for large datasets."
+            },
+            {
+                question: "What is Recursion?",
+                options: ["A function calling itself to solve smaller instances of the problem", "A loop that runs infinitely without stopping", "A database connection error", "A variable that changes its type"],
+                correct: 0,
+                explanation: "Recursion is a technique where a problem is solved by breaking it down into smaller, self-similar subproblems. Example: Calculating Factorial(5) = 5 * Factorial(4)."
+            },
+            {
+                question: "What is the primary purpose of a Hash Map (Dictionary)?",
+                options: ["To store data in an ordered sequential list", "To sort data automatically upon insertion", "To encrypt passwords for security", "To allow fast data retrieval (O(1) average) using unique keys"],
+                correct: 3,
+                explanation: "Hash maps map 'keys' to 'values', allowing you to instantly look up a value (like a phone number) if you know the key (the name), without searching through the whole list."
+            },
+            {
+                question: "What does Space Complexity measure?",
+                options: ["The physical dimensions of the computer hardware", "The amount of memory (RAM) an algorithm needs to run relative to the input size", "The total storage capacity of the hard drive", "The speed of the internet connection"],
+                correct: 1,
+                explanation: "Just like Time Complexity measures speed, Space Complexity ensures our algorithm doesn't crash by using more memory than the computer has available."
             }
         ];
         

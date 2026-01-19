@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What is Tokenization in NLP?",
-                options: ["Encrypting text into secure tokens", "Converting text to speech", "Breaking text into smaller units like words or subwords", "Translating text to another language"],
+                options: ["Encrypting text into secure tokens for privacy", "Converting text to speech audio files", "Breaking text into smaller units like words or subwords", "Translating text to another language automatically"],
                 correct: 2,
                 explanation: "Tokenization is the first step in processing text, where a sentence like 'AI is cool' is split into tokens ['AI', 'is', 'cool']. This turns unstructured text into discrete elements the model can process."
             },
             {
                 question: "What is the purpose of Word Embeddings (e.g., Word2Vec, GloVe)?",
-                options: ["To represent words as dense vectors where similar words have similar vector values", "To compress text files", "To correct spelling mistakes", "To sort words alphabetically"],
+                options: ["To represent words as dense vectors where similar words have similar vector values", "To compress text files to save storage space", "To automatically correct spelling mistakes", "To sort words alphabetically for indexing"],
                 correct: 0,
                 explanation: "Embeddings map words to a vector space where semantic relationships are preserved. Example: The vector for 'King' minus 'Man' plus 'Woman' results in a vector very close to 'Queen'."
             },
             {
                 question: "What key mechanism makes Transformer models (like BERT and GPT) so effective?",
-                options: ["They read text strictly from left to right", "They use only CPU for processing", "They memorize every sentence they have ever seen", "Self-Attention mechanism, allowing the model to weigh the importance of different words in a sentence regardless of distance"],
+                options: ["They read text strictly from left to right one word at a time", "They use only CPU for processing which is more efficient", "They memorize every sentence they have ever seen during training", "Self-Attention mechanism, allowing the model to weigh the importance of different words in a sentence regardless of distance"],
                 correct: 3,
                 explanation: "Self-Attention allows the model to understand context by relating every word to every other word. Example: In 'The animal didn't cross the street because **it** was too tired', attention helps the model understand that 'it' refers to 'the animal', not 'the street'."
             },
             {
                 question: "What is the goal of Sentiment Analysis?",
-                options: ["To detect the language of the text", "To determine the emotional tone (positive, negative, neutral) behind a text", "To summarize a long article", "To generate a response to a question"],
+                options: ["To detect the source language of the text", "To determine the emotional tone (positive, negative, neutral) behind a text", "To summarize a long article into a short paragraph", "To generate a response to a user question"],
                 correct: 1,
                 explanation: "Sentiment analysis classifies the subjective opinion in text. Example: Analyzing product reviews to determine if customers are happy (positive) or angry (negative) about a new feature."
             },
             {
                 question: "What does 'Large Language Model' (LLM) refer to?",
-                options: ["A neural network trained on vast amounts of text data capable of understanding and generating human-like text", "A model that can only process long words", "A database of all dictionary words", "A model that takes up a lot of hard drive space but does simple tasks"],
+                options: ["A neural network trained on vast amounts of text data capable of understanding and generating human-like text", "A model that can only process extremely long words", "A comprehensive database of all dictionary words", "A legacy model that takes up a lot of hard drive space but does simple tasks"],
                 correct: 0,
                 explanation: "LLMs like GPT-4 are 'large' both in terms of parameter count (billions) and the size of their training data (trillions of tokens), enabling them to perform a wide range of tasks from coding to creative writing."
+            },
+            {
+                question: "What are 'Stop Words' in NLP?",
+                options: ["Special commands that tell the AI to stop generating text", "Common words (like 'the', 'is', 'at') that are often filtered out because they carry little unique meaning", "Offensive words that are automatically blocked by the system", "The last word in every sentence"],
+                correct: 1,
+                explanation: "Stop words are high-frequency words that act as grammatical glue but don't add much semantic value to the topic. Removing them can sometimes help the model focus on the important keywords."
+            },
+            {
+                question: "What is the difference between Stemming and Lemmatization?",
+                options: ["Stemming creates new words; Lemmatization deletes words", "Stemming is used for flowers; Lemmatization is used for fruits", "Stemming chops off word endings (often crudely); Lemmatization reduces words to their dictionary base form (lemma) using context", "There is no difference, they are synonyms"],
+                correct: 2,
+                explanation: "Stemming might reduce 'better' to 'bet' (incorrectly), while Lemmatization knows that 'better' is the comparative form of 'good' and maps it to 'good'."
+            },
+            {
+                question: "What is Named Entity Recognition (NER)?",
+                options: ["Identifying and classifying proper names in text (like people, organizations, locations)", "Assigning a name to a new AI model", "Recognizing the font style of the text", "Translating names into other languages phonetically"],
+                correct: 0,
+                explanation: "NER scans text to locate and categorize entities. Example: In 'Apple bought a startup in London', it identifies 'Apple' (Organization) and 'London' (Location)."
+            },
+            {
+                question: "How does Machine Translation (like Google Translate) work?",
+                options: ["It looks up every word in a static dictionary", "It crowd-sources translations from human volunteers", "It uses bilingual staff to translate in real-time", "It uses sequence-to-sequence models to map an input sentence in one language to an output sentence in another"],
+                correct: 3,
+                explanation: "Modern translation uses neural networks (often Transformers) to understand the context of the whole sentence in the source language before generating the corresponding sentence in the target language."
+            },
+            {
+                question: "What is a Chatbot primarily designed to do?",
+                options: ["To play complex strategy games like chess", "Simulate human conversation through text or voice interactions", "To search the web for images and videos", "To write and debug computer code only"],
+                correct: 1,
+                explanation: "Chatbots use NLP to understand user queries and generate appropriate, conversational responses, ranging from simple rule-based scripts to complex AI assistants."
             }
         ];
         

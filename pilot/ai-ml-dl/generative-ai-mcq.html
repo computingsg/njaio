@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What distinguishes Generative AI from traditional discriminative AI?",
-                options: ["Generative AI creates new content (text, images, audio), while Discriminative AI classifies or predicts labels for existing data", "Generative AI is only for images, Discriminative is for text", "Generative AI is always more accurate", "Discriminative AI is older and obsolete"],
+                options: ["Generative AI creates new content (text, images, audio), while Discriminative AI classifies or predicts labels for existing data", "Generative AI is primarily for visual art, while Discriminative AI processes only text documents", "Generative AI is always more accurate and requires less data than Discriminative AI", "Discriminative AI is an obsolete technology replaced entirely by Generative AI"],
                 correct: 0,
                 explanation: "Discriminative models draw boundaries between classes (e.g., 'Cat' vs 'Dog'). Generative models learn the distribution of the data to create *new* instances (e.g., drawing a new cat that never existed)."
             },
             {
                 question: "How do Generative Adversarial Networks (GANs) work?",
-                options: ["A single network tries to memorize the training data", "They use genetic algorithms to evolve solutions", "Two networks (Generator and Discriminator) compete: one creates fakes, the other tries to detect them", "They collaborate to sort data"],
+                options: ["A single network tries to memorize the training data perfectly", "They use genetic algorithms to simulate biological evolution", "Two networks (Generator and Discriminator) compete: one creates fakes, the other tries to detect them", "Multiple networks collaborate to sort data into clusters"],
                 correct: 2,
                 explanation: "The Generator tries to fool the Discriminator with realistic fake data. The Discriminator tries to distinguish real from fake. This competition drives both to improve, resulting in highly realistic outputs."
             },
             {
                 question: "What is the core idea behind Diffusion Models (like Stable Diffusion)?",
-                options: ["They diffuse knowledge across a network", "They spread pixels randomly", "They combine multiple images into one", "They learn to reverse a process of gradually adding noise to an image until it creates a clear image from pure noise"],
+                options: ["They diffuse knowledge across a distributed network of computers", "They spread pixels randomly to create abstract art", "They combine multiple existing images into a single collage", "They learn to reverse a process of gradually adding noise to an image until it creates a clear image from pure noise"],
                 correct: 3,
                 explanation: "Diffusion models are trained to 'denoise' data. To generate an image, they start with random static (noise) and iteratively refine it to match a text prompt, effectively 'sculpting' the image from chaos."
             },
             {
                 question: "What is 'Hallucination' in the context of Large Language Models?",
-                options: ["When the model sees images that aren't there", "When the model generates text that sounds plausible but is factually incorrect or nonsensical", "When the model crashes due to overload", "When the model becomes self-aware"],
+                options: ["When the model visualizes images that aren't present in the input", "When the model generates text that sounds plausible but is factually incorrect or nonsensical", "When the model crashes due to processing overload", "When the model achieves consciousness and self-awareness"],
                 correct: 1,
                 explanation: "Because LLMs predict the next likely word based on patterns rather than querying a database of facts, they can confidently state falsehoods. Example: Inventing a court case that never happened."
             },
             {
                 question: "What is 'Prompt Engineering'?",
-                options: ["Designing the physical hardware for AI chips", "Writing Python code to build a model", "Crafting specific input queries to guide a Generative AI model to produce the best possible output", "Engineering prompts for theatre plays"],
+                options: ["Designing the physical hardware architecture for AI chips", "Writing low-level Python code to build a model", "Crafting specific input queries to guide a Generative AI model to produce the best possible output", "Engineering prompts for theatrical performances"],
                 correct: 2,
                 explanation: "Since generative models are sensitive to how instructions are phrased, 'Prompt Engineering' involves iterating on the text input (context, constraints, examples) to get the desired result."
+            },
+            {
+                question: "How do Large Language Models (LLMs) primarily generate text?",
+                options: ["By predicting the next most likely word (token) in a sequence", "By copying and pasting sentences directly from Wikipedia", "By reasoning like a human brain using logic", "By translating binary code into human language"],
+                correct: 0,
+                explanation: "At their core, LLMs are 'next-token predictors'. They calculate the probability of every possible next word based on the previous words and choose one (often the most likely) to continue the sentence."
+            },
+            {
+                question: "What does the 'Temperature' setting control in a generative model?",
+                options: ["The physical operating temperature of the server", "The speed at which the text is generated", "The randomness or creativity of the output", "The maximum length of the generated text"],
+                correct: 2,
+                explanation: "A low temperature (e.g., 0.2) makes the model more deterministic and focused (good for coding). A high temperature (e.g., 0.8) makes it more random and creative (good for storytelling)."
+            },
+            {
+                question: "What is 'Fine-tuning' in Generative AI?",
+                options: ["Adjusting the audio volume of generated speech", "Taking a pre-trained general model and training it further on a specific dataset to specialize it", "Cleaning the computer hardware for better performance", "Writing a more detailed prompt for the model"],
+                correct: 1,
+                explanation: "Fine-tuning adapts a general-purpose model (like GPT-4) to excel at a specific task (like medical diagnosis or legal analysis) by training it on examples from that domain."
+            },
+            {
+                question: "What is a major ethical concern regarding 'Deepfakes'?",
+                options: ["They take too long to render on standard computers", "They consume excessive internet bandwidth", "They are too expensive for the average person to create", "They can be used to spread misinformation or damage reputations by creating realistic fake videos"],
+                correct: 3,
+                explanation: "Deepfakes use Generative AI to swap faces or voices in videos with high realism, which can be misused for political propaganda, harassment, or fraud."
+            },
+            {
+                question: "What is 'Multimodal' Generative AI?",
+                options: ["AI that can understand and generate multiple types of media (e.g., text, images, audio) simultaneously", "AI that operates on multiple transportation modes", "AI that exhibits multiple distinct personalities", "AI that can speak multiple languages only"],
+                correct: 0,
+                explanation: "Multimodal models (like GPT-4o or Gemini) can process text, see images, and hear audio all within the same model, allowing for richer interactions like asking questions about a photo."
             }
         ];
         

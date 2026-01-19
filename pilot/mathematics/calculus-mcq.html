@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What is a derivative?",
-                options: ["The rate of change of a function", "The area under a curve", "A type of financial asset", "A matrix operation"],
+                options: ["The rate of change of a function", "The area under a curve", "A complex number representing infinity", "A type of matrix transformation"],
                 correct: 0,
                 explanation: "The derivative measures how much a function's output changes when its input changes."
             },
             {
                 question: "What is a gradient in machine learning?",
-                options: ["A color transition", "A type of neural network", "A vector of partial derivatives pointing to the steepest increase", "A dataset"],
+                options: ["A smooth transition between colors", "A type of recurrent neural network", "A vector of partial derivatives pointing to the steepest increase", "A scalar value representing the error"],
                 correct: 2,
                 explanation: "The gradient is a vector that tells us the direction of the steepest ascent of the loss function."
             },
             {
                 question: "What is Gradient Descent used for?",
-                options: ["To increase the error", "To visualize data", "To sort numbers", "To find the minimum of a function (like loss)"],
+                options: ["To maximize the error function", "To visualize high-dimensional data", "To analytically solve linear equations", "To find the minimum of a function (like loss)"],
                 correct: 3,
                 explanation: "Gradient Descent is an optimization algorithm used to minimize the loss function by moving in the direction opposite to the gradient."
             },
             {
                 question: "What is the Chain Rule?",
-                options: ["A rule for linking databases", "A method to compute the derivative of composite functions", "A law in physics", "A type of jewelry"],
+                options: ["A rule for linking multiple databases", "A method to compute the derivative of composite functions", "A physical law of motion", "A method for matrix multiplication"],
                 correct: 1,
                 explanation: "The Chain Rule allows us to compute derivatives of complex nested functions, which is essential for backpropagation in neural networks."
             },
             {
                 question: "Why is Calculus essential for training Neural Networks?",
-                options: ["It isn't", "It makes the computer run faster", "It allows us to calculate how to adjust weights to reduce error", "It is used for storing data"],
+                options: ["It is not required for modern AI", "It optimizes the hardware usage", "It allows us to calculate how to adjust weights to reduce error", "It is used solely for data storage"],
                 correct: 2,
                 explanation: "Calculus (specifically derivatives) tells us how to update the model's weights to minimize the prediction error."
+            },
+            {
+                question: "What is a 'Partial Derivative'?",
+                options: ["A derivative that is only estimated", "The derivative of a function with multiple variables with respect to one variable, treating others as constants", "A small fraction of a derivative", "A derivative used in discrete mathematics"],
+                correct: 1,
+                explanation: "In functions with multiple inputs (like f(x, y)), a partial derivative measures how the output changes when we change only one input (e.g., x) while keeping the others (e.g., y) fixed."
+            },
+            {
+                question: "What does an Integral represent geometrically?",
+                options: ["The instantaneous slope of the curve", "The maximum height of the curve", "The area under the curve", "The curvature of the line"],
+                correct: 2,
+                explanation: "Integration is the reverse of differentiation. Geometrically, the definite integral of a function calculates the accumulated area between the curve and the x-axis."
+            },
+            {
+                question: "What is the difference between a Global Minimum and a Local Minimum?",
+                options: ["A global minimum is the absolute lowest point in the entire function; a local minimum is the lowest point in a specific neighborhood", "They are mathematically identical", "Local minimum is always lower than global", "Global minimum applies only to convex functions"],
+                correct: 0,
+                explanation: "Optimization algorithms might get stuck in a local minimum (a small valley) and miss the global minimum (the deepest valley), which represents the best possible solution."
+            },
+            {
+                question: "Why are Convex functions desirable in optimization?",
+                options: ["They are aesthetically pleasing to plot", "They have multiple confusing minima", "They are computationally impossible to solve", "They have only one global minimum, ensuring that Gradient Descent will always find the best solution"],
+                correct: 3,
+                explanation: "A convex function is shaped like a bowl. No matter where you start rolling a ball (gradient descent), it will eventually reach the bottom (the global minimum)."
+            },
+            {
+                question: "What is a 'Limit' in Calculus?",
+                options: ["The maximum processing speed", "The value that a function approaches as the input approaches some value", "The boundary of the graph", "The final result of an equation"],
+                correct: 1,
+                explanation: "Limits are fundamental to defining derivatives and integrals. They describe the behavior of a function as we get infinitely close to a specific point."
             }
         ];
         

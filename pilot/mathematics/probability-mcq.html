@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What is Probability?",
-                options: ["A certainty", "A random guess", "A complex number", "A measure of the likelihood of an event occurring"],
+                options: ["A certainty that an event will happen", "A random uneducated guess", "A complex number used in calculus", "A measure of the likelihood of an event occurring"],
                 correct: 3,
                 explanation: "Probability quantifies uncertainty, measuring how likely an event is to happen between 0 (impossible) and 1 (certain)."
             },
             {
                 question: "What is Conditional Probability?",
-                options: ["The probability of two independent events", "The probability of an event given that another event has occurred", "A probability that changes over time", "A false probability"],
+                options: ["The probability of two independent events occurring together", "The probability of an event given that another event has occurred", "A probability value that changes randomly over time", "A theoretical probability that cannot be calculated"],
                 correct: 1,
                 explanation: "Conditional probability P(A|B) measures the likelihood of A happening given that B is known to have happened."
             },
             {
                 question: "What is Bayes' Theorem used for?",
-                options: ["Calculating geometry", "Sorting lists", "Updating the probability of a hypothesis as more evidence becomes available", "Drawing graphs"],
+                options: ["Calculating the area of geometric shapes", "Sorting lists of numbers efficiently", "Updating the probability of a hypothesis as more evidence becomes available", "Drawing graphs of functions"],
                 correct: 2,
                 explanation: "Bayes' Theorem provides a way to update our beliefs (probabilities) based on new data or evidence."
             },
             {
                 question: "What is a Probability Distribution?",
-                options: ["A function that describes the likelihood of obtaining distinct values", "A way to distribute prizes", "A random scatter plot", "A computer network"],
+                options: ["A function that describes the likelihood of obtaining distinct values", "A method for distributing prizes randomly", "A scatter plot of random data points", "A network of computers sharing data"],
                 correct: 0,
                 explanation: "A probability distribution lists all possible outcomes and their associated probabilities."
             },
             {
                 question: "Why is Probability important in AI?",
-                options: ["AI models always know the exact answer", "It helps in coloring images", "It is required by law", "Real-world data is noisy and uncertain"],
+                options: ["AI models always know the exact answer with 100% certainty", "It helps in generating color palettes for images", "It is required by government regulations", "Real-world data is noisy and uncertain"],
                 correct: 3,
                 explanation: "AI operates in the real world where data is often incomplete or noisy, and probability provides the framework to handle this uncertainty."
+            },
+            {
+                question: "What does it mean for two events to be 'Independent'?",
+                options: ["The outcome of one event does not affect the outcome of the other", "They must happen at the exact same time", "They cannot both happen together", "They are opposite events"],
+                correct: 0,
+                explanation: "If flipping a coin (Heads/Tails) doesn't change the probability of rolling a die (1-6), the events are independent. P(A and B) = P(A) * P(B)."
+            },
+            {
+                question: "What is a Random Variable?",
+                options: ["A variable in computer code that changes value randomly", "A variable whose value is permanently unknown", "A variable whose undefined value depends on the outcome of a random phenomenon", "A mistake or error in the dataset"],
+                correct: 2,
+                explanation: "A random variable maps outcomes of a random process to numbers. Example: Let X be the number of Heads in 10 coin flips."
+            },
+            {
+                question: "What is the Normal Distribution (Bell Curve)?",
+                options: ["A distribution where all outcomes are equally likely", "A symmetric probability distribution where most values cluster around the mean", "A distribution with two distinct peaks", "A flat line graph"],
+                correct: 1,
+                explanation: "Many natural phenomena (heights, test scores, errors) follow a normal distribution. ~68% of data falls within one standard deviation of the mean."
+            },
+            {
+                question: "What does Variance measure?",
+                options: ["The arithmetic average of the dataset", "The total sum of all values", "How spread out the numbers are from their average value", "The maximum value in the dataset"],
+                correct: 2,
+                explanation: "Variance (and its square root, Standard Deviation) quantifies the dispersion of data. Low variance means data points are close to the mean; high variance means they are spread out."
+            },
+            {
+                question: "Does Correlation imply Causation?",
+                options: ["Yes, always", "No, correlation just means two variables move together, not that one causes the other", "Only if the correlation is strictly positive", "Only in Artificial Intelligence contexts"],
+                correct: 1,
+                explanation: "Just because ice cream sales and shark attacks both go up in summer (correlation), it doesn't mean eating ice cream causes shark attacks. There is a confounding variable: heat."
             }
         ];
         

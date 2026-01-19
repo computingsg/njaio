@@ -46,33 +46,63 @@
         const questions = [
             {
                 question: "What is a vector in the context of AI?",
-                options: ["A geometric shape", "A type of computer virus", "A random number", "An ordered list of numbers representing data"],
+                options: ["A geometric shape like a circle", "A malicious computer virus", "A single random number", "An ordered list of numbers representing data"],
                 correct: 3,
                 explanation: "In AI, vectors are used to represent data points, where each number corresponds to a feature."
             },
             {
                 question: "What is the result of adding two vectors of the same size?",
-                options: ["A new vector where corresponding elements are added", "A single number", "A matrix", "It is impossible"],
+                options: ["A new vector where corresponding elements are added", "A single scalar number", "A matrix with double dimensions", "It is mathematically impossible"],
                 correct: 0,
                 explanation: "Vector addition is performed element-wise, resulting in a new vector of the same dimension."
             },
             {
                 question: "What does a matrix represent in Machine Learning?",
-                options: ["A complex mathematical equation", "A dataset where rows are samples and columns are features", "A computer screen", "A video game level"],
+                options: ["A complex system of linear equations", "A dataset where rows are samples and columns are features", "A grid of pixels on a screen", "A level map in a video game"],
                 correct: 1,
                 explanation: "Matrices are the standard way to represent datasets in ML, with rows as samples and columns as features."
             },
             {
                 question: "What is a dot product of two vectors?",
-                options: ["A new vector", "A matrix", "A scalar (single number) obtained by multiplying corresponding elements and summing them", "A division operation"],
+                options: ["A new vector of the same size", "A matrix of multiplied values", "A scalar (single number) obtained by multiplying corresponding elements and summing them", "A division operation result"],
                 correct: 2,
                 explanation: "The dot product takes two vectors and returns a single number (scalar), which is a measure of their similarity."
             },
             {
                 question: "Why is Linear Algebra important for AI?",
-                options: ["It is not important", "It helps in graphics only", "It provides the language and operations to manipulate data efficiently", "It is used for word processing"],
+                options: ["It is not actually important for modern AI", "It is useful only for rendering 3D graphics", "It provides the language and operations to manipulate data efficiently", "It is primarily used for text processing"],
                 correct: 2,
                 explanation: "Linear Algebra provides the fundamental rules for calculating with vectors and matrices, which is how AI models process data."
+            },
+            {
+                question: "What is required to multiply two matrices (A x B)?",
+                options: ["They must have exactly the same dimensions", "They must both be square matrices", "The number of columns in A must equal the number of rows in B", "They must contain only positive integers"],
+                correct: 2,
+                explanation: "Matrix multiplication is not element-wise. If A is size (m x n) and B is (n x p), the resulting matrix will be (m x p). The inner dimensions (n) must match."
+            },
+            {
+                question: "What is the Transpose of a matrix?",
+                options: ["Flipping the matrix over its main diagonal (switching rows and columns)", "Rotating the matrix 90 degrees clockwise", "Adding 1 to every element in the matrix", "Deleting the last row of the matrix"],
+                correct: 0,
+                explanation: "Transposing a matrix turns its rows into columns and vice versa. If A is (2x3), A-transpose is (3x2)."
+            },
+            {
+                question: "What is an Identity Matrix?",
+                options: ["A matrix filled entirely with zeros", "A matrix filled entirely with ones", "A matrix filled with random numbers", "A square matrix with 1s on the main diagonal and 0s everywhere else"],
+                correct: 3,
+                explanation: "The Identity Matrix acts like the number '1' in regular multiplication. Multiplying any matrix by the Identity Matrix leaves it unchanged."
+            },
+            {
+                question: "What is an Eigenvector?",
+                options: ["A vector that becomes zero after transformation", "A non-zero vector that changes by only a scalar factor (eigenvalue) when a linear transformation is applied", "A vector with exactly 8 dimensions", "A vector that follows a curved path"],
+                correct: 1,
+                explanation: "Eigenvectors identify the principal directions in which a linear transformation acts by merely stretching or shrinking, without rotating. They are crucial in PCA (Principal Component Analysis)."
+            },
+            {
+                question: "What is Dimensionality Reduction?",
+                options: ["Reducing the physical size of the computer screen", "Deleting the entire dataset to save space", "Reducing the number of random variables (features) under consideration", "Using smaller font sizes for numbers"],
+                correct: 2,
+                explanation: "Techniques like PCA reduce the number of features (dimensions) while preserving as much information (variance) as possible, helping to visualize data and reduce computational cost."
             }
         ];
         

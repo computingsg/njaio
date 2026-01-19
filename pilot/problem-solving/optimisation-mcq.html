@@ -46,7 +46,7 @@
         const questions = [
             {
                 question: "What is the primary goal of optimisation in machine learning training?",
-                options: ["To make the code look prettier", "To increase the size of the dataset", "To sort the data alphabetically", "To minimize a loss function (error) by adjusting model parameters"],
+                options: ["To make the source code look prettier", "To artificially increase the size of the dataset", "To sort all data points alphabetically", "To minimize a loss function (error) by adjusting model parameters"],
                 correct: 3,
                 explanation: "Training an AI model is essentially an optimization problem where we try to find the set of weights that results in the lowest possible error on the training data."
             },
@@ -64,7 +64,7 @@
             },
             {
                 question: "How does Stochastic Gradient Descent (SGD) differ from standard Gradient Descent?",
-                options: ["It uses a better computer", "It updates weights using a single random sample (or small batch) instead of the whole dataset", "It always finds the global minimum", "It moves uphill instead of downhill"],
+                options: ["It requires a quantum computer", "It updates weights using a single random sample (or small batch) instead of the whole dataset", "It guarantees finding the global minimum every time", "It moves uphill instead of downhill"],
                 correct: 1,
                 explanation: "Standard Gradient Descent calculates the error for *all* data points before one step (slow). SGD takes a step after seeing just one or a few examples, which is much faster and adds noise that can help escape local minima."
             },
@@ -73,6 +73,36 @@
                 options: ["When the minimum is too small to see", "When the algorithm runs only on a local computer", "When the error becomes negative", "When the algorithm stops at a valley that is not the lowest point in the entire landscape"],
                 correct: 3,
                 explanation: "In complex landscapes, there are many small valleys (local minima). The algorithm might get stuck in a shallow one, thinking it's the bottom, while the true deepest valley (global minimum) is further away."
+            },
+            {
+                question: "What is an 'Objective Function'?",
+                options: ["The mathematical function we want to maximize or minimize (like profit or error)", "The goal of the project written in English", "A function that objects to bad data", "A button on the screen"],
+                correct: 0,
+                explanation: "The objective function mathematically defines the goal. In AI, it's often a 'Loss Function' we want to minimize, or a 'Reward Function' we want to maximize."
+            },
+            {
+                question: "What are 'Constraints' in an optimization problem?",
+                options: ["The maximum speed limit of the CPU", "Conditions or limits that the solution must satisfy (e.g., budget < $100)", "The syntax errors in the code", "The physical size of the monitor"],
+                correct: 1,
+                explanation: "Constraints define the feasible region for the solution. You might want to minimize cost (objective) subject to quality remaining above 90% (constraint)."
+            },
+            {
+                question: "What is the purpose of Regularization (e.g., L1, L2)?",
+                options: ["To make the model training faster", "To make the model physically larger", "To sort the data automatically", "To penalize complex models to prevent overfitting"],
+                correct: 3,
+                explanation: "Regularization adds a penalty term to the loss function based on the size of the weights, encouraging the model to keep weights small and simple, which improves generalization."
+            },
+            {
+                question: "What is Hyperparameter Tuning?",
+                options: ["Tuning a musical instrument", "Adjusting the volume of the computer", "Systematically searching for the best settings (like learning rate, batch size) for the model", "Writing better comments in code"],
+                correct: 2,
+                explanation: "Model parameters (weights) are learned during training. Hyperparameters (like 'K' in KNN or learning rate) must be set *before* training, and finding the best ones is a trial-and-error optimization process."
+            },
+            {
+                question: "What is 'Early Stopping'?",
+                options: ["Stopping training when the performance on a validation set starts to get worse, to prevent overfitting", "Unplugging the computer power cord", "Stopping the project due to lack of funds", "Pausing the video game"],
+                correct: 0,
+                explanation: "If we train for too long, the model might start memorizing the training data (overfitting). Early stopping monitors validation error and halts training when it stops improving."
             }
         ];
         

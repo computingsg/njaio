@@ -46,19 +46,19 @@
         const questions = [
             {
                 question: "What is the main data structure in NumPy?",
-                options: ["List", "ndarray (N-dimensional array)", "Dictionary", "Tree"],
+                options: ["A linked list of objects", "ndarray (N-dimensional array)", "A key-value dictionary", "A binary search tree"],
                 correct: 1,
                 explanation: "The ndarray is NumPy's primary data structure, designed for efficient storage and manipulation of large datasets."
             },
             {
                 question: "Why is NumPy faster than Python lists?",
-                options: ["It uses magic", "It skips calculations", "It uses C-based implementation and contiguous memory", "It runs on the internet"],
+                options: ["It uses a special type of AI optimization", "It skips complex calculations", "It uses C-based implementation and contiguous memory", "It runs on cloud servers"],
                 correct: 2,
                 explanation: "NumPy arrays are stored in contiguous memory blocks and operations are implemented in C, allowing for vectorized execution."
             },
             {
                 question: "What is Broadcasting in NumPy?",
-                options: ["Sending data to other computers", "Printing array contents", "Deleting data", "A method to perform arithmetic on arrays of different shapes"],
+                options: ["Distributing data across multiple servers", "Displaying array contents to the console", "Removing duplicate values from an array", "A method to perform arithmetic on arrays of different shapes"],
                 correct: 3,
                 explanation: "Broadcasting describes how NumPy treats arrays with different shapes during arithmetic operations."
             },
@@ -70,9 +70,39 @@
             },
             {
                 question: "What is vectorization?",
-                options: ["Drawing lines", "Sorting lists", "Converting loops into array operations", "Removing viruses"],
+                options: ["Converting raster images to vectors", "Sorting lists alphabetically", "Converting loops into array operations", "Scanning for security threats"],
                 correct: 2,
                 explanation: "Vectorization replaces explicit Python loops with array expressions, which are much faster."
+            },
+            {
+                question: "Which method changes the shape of an array without changing its data?",
+                options: ["resize()", "reshape()", "remake()", "remodel()"],
+                correct: 1,
+                explanation: "reshape() allows you to reorganize the data (e.g., from a 1D list of 12 items to a 3x4 matrix), provided the total number of elements remains the same."
+            },
+            {
+                question: "How do you calculate the Dot Product of two arrays 'a' and 'b'?",
+                options: ["a * b", "np.mult(a, b)", "np.dot(a, b) or a @ b", "np.prod(a, b)"],
+                correct: 2,
+                explanation: "The dot product is a fundamental algebraic operation. In NumPy, it's performed using np.dot() or the @ operator."
+            },
+            {
+                question: "How do you select the first 3 elements of an array 'arr'?",
+                options: ["arr[0:3]", "arr[1:3]", "arr[3]", "arr[0,1,2]"],
+                correct: 0,
+                explanation: "Slicing syntax arr[start:stop] includes the 'start' index but excludes the 'stop' index. So arr[0:3] gives indices 0, 1, and 2."
+            },
+            {
+                question: "Which function calculates the average of an array?",
+                options: ["np.average()", "np.median()", "np.mode()", "np.mean()"],
+                correct: 3,
+                explanation: "np.mean() computes the arithmetic mean (average) of the array elements."
+            },
+            {
+                question: "How do you generate an array of random numbers?",
+                options: ["np.random.generate()", "np.random.rand()", "np.numbers.random()", "np.create.random()"],
+                correct: 1,
+                explanation: "The np.random module contains many functions for generating random numbers, such as rand() for uniform distribution or randn() for normal distribution."
             }
         ];
         
