@@ -407,6 +407,109 @@
                 padding: 5px 10px;
             }
         }
+
+        /* Mobile Responsive Link Handling */
+        .external-resources p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .external-resources a {
+            word-break: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        /* Footer link mobile handling */
+        .footer-text a {
+            word-break: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        /* Sign-up section mobile responsiveness */
+        @media (max-width: 768px) {
+            .sign-up-section h2 {
+                font-size: 2rem !important;
+            }
+            
+            .sign-up-section p {
+                font-size: 1.1rem !important;
+            }
+            
+            .sign-up-section a {
+                font-size: 1.1rem !important;
+                padding: 12px 25px !important;
+                word-break: break-word;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sign-up-section h2 {
+                font-size: 1.7rem !important;
+            }
+            
+            .sign-up-section p {
+                font-size: 1rem !important;
+            }
+            
+            .sign-up-section a {
+                font-size: 1rem !important;
+                padding: 10px 20px !important;
+                word-break: break-word;
+                max-width: 100%;
+            }
+        }
+
+        /* Additional mobile improvements */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .subtopics a {
+                font-size: 0.95rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .card {
+                padding: 12px;
+            }
+            
+            .card h2 {
+                font-size: 1.2rem;
+            }
+            
+            .subtopics a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -483,7 +586,7 @@
 
     <!-- External Learning Resources -->
     <div class="container">
-        <div class="card" style="margin-top: 30px; background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%); border-left: 5px solid #4CAF50;">
+        <div class="card external-resources" style="margin-top: 30px; background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%); border-left: 5px solid #4CAF50;">
             <div class="card-header" style="border-bottom: 3px solid #4CAF50;">
                 <i class="fas fa-external-link-alt card-icon" style="color: #4CAF50;"></i>
                 <h2 style="color: #2E7D32;">External Learning Resources</h2>
@@ -499,7 +602,7 @@
                 </p>
                 <p style="margin-bottom: 0; color: #555; font-style: italic;">
                     Come across a student-friendly learning resource on AI? Suggest at <a href="https://computing.sg/goto/njaiofeedback" target="_blank" class="footer-link" style="color: #1976D2; font-weight: 600;">https://computing.sg/goto/njaiofeedback</a> 
-                    and we will acknowledge your contribution(s) on this page! 😊
+                    and we will acknowledge your contribution(s)! 😊
                 </p>
             </div>
         </div>
@@ -507,7 +610,7 @@
 
     <!-- Sign-up Section -->
     <div class="container">
-        <div class="card" style="margin-top: 30px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); border-left: 5px solid #ff0000; text-align: center; padding: 40px 20px;">
+        <div class="card sign-up-section" style="margin-top: 30px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); border-left: 5px solid #ff0000; text-align: center; padding: 40px 20px;">
             <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
                 <i class="fas fa-user-plus" style="margin-right: 15px;"></i>
                 Sign up for NJAIO Pilot
@@ -528,9 +631,9 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p class="footer-text">
+            <p class="footer-text" style="word-wrap: break-word; overflow-wrap: break-word;">
                 NJAIO is a community education outreach programme by SIMCC and ComputingSG. 
-                More info at <a href="https://jaio.simcc.org" target="_blank" class="footer-link">https://jaio.simcc.org</a>
+                More info at <a href="https://jaio.simcc.org" target="_blank" class="footer-link" style="word-break: break-word;">https://jaio.simcc.org</a>
             </p>
             <div class="footer-contact">
                 <a href="mailto:njaio@computing.sg" class="email-link">
