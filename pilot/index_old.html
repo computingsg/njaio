@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Junior Artificial Intelligence Olympiad Pilot Run</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            animation: gradientShift 8s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+            padding: 10px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            color: #ff0000;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-right: 12px;
+            color: #667eea;
+        }
+
+        .card h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .subtopics {
+            list-style: none;
+        }
+
+        .subtopics li {
+            margin-bottom: 8px;
+        }
+
+        .subtopics a {
+            color: #4a5568;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            background: #f7fafc;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .subtopics i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #667eea;
+        }
+
+        .subtopics a:hover {
+            border-color: transparent;
+            color: white;
+            transform: translateX(8px) scale(1.02);
+        }
+
+        .subtopics a:hover i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .mathematics { 
+            border-left: 5px solid #ff6b6b; 
+            background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+        }
+        .mathematics .card-icon { color: #ff6b6b; }
+        .mathematics .subtopics a:hover { 
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        .programming { 
+            border-left: 5px solid #4ecdc4; 
+            background: linear-gradient(135deg, #ffffff 0%, #f0fffe 100%);
+        }
+        .programming .card-icon { color: #4ecdc4; }
+        .programming .subtopics a:hover { 
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+        }
+        
+        .ai-ml-dl { 
+            border-left: 5px solid #45b7d1; 
+            background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+        }
+        .ai-ml-dl .card-icon { color: #45b7d1; }
+        .ai-ml-dl .subtopics a:hover { 
+            background: linear-gradient(135deg, #45b7d1, #2980b9);
+            box-shadow: 0 8px 25px rgba(69, 183, 209, 0.3);
+        }
+        
+        .problem-solving { 
+            border-left: 5px solid #f9ca24; 
+            background: linear-gradient(135deg, #ffffff 0%, #fffdf0 100%);
+        }
+        .problem-solving .card-icon { color: #f9ca24; }
+        .problem-solving .subtopics a:hover { 
+            background: linear-gradient(135deg, #f9ca24, #f0932b);
+            box-shadow: 0 8px 25px rgba(249, 202, 36, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .header p {
+                font-size: 1.3rem;
+            }
+            
+            .logo-container {
+                gap: 18px;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .logo-container {
+                gap: 15px;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+        }
+
+        /* Footer Styles - Enhanced & Compact */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px 20px;
+            margin-top: 40px;
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-text {
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.4;
+            flex: 1;
+            text-align: left;
+        }
+
+        .footer-link {
+            color: #64b5f6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .footer-link:hover {
+            color: #90caf9;
+            border-bottom-color: #90caf9;
+            text-decoration: none;
+        }
+
+        .footer-contact {
+            margin: 0;
+        }
+
+        .email-link {
+            color: #e3f2fd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .email-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .email-icon {
+            font-size: 1rem;
+            color: #64b5f6;
+        }
+
+        /* Responsive Footer - Enhanced */
+        @media (max-width: 1024px) {
+            .footer {
+                padding: 18px 20px;
+                margin-top: 35px;
+            }
+            
+            .footer-content {
+                gap: 12px;
+            }
+            
+            .footer-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 15px 15px;
+                margin-top: 30px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .footer-text {
+                text-align: center;
+                font-size: 0.85rem;
+            }
+            
+            .email-link {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 12px 15px;
+                margin-top: 25px;
+            }
+            
+            .footer-text {
+                font-size: 0.8rem;
+            }
+            
+            .email-link {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+        }
+
+        /* Mobile Responsive Link Handling */
+        .external-resources p {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .external-resources a {
+            word-break: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        /* Footer link mobile handling */
+        .footer-text a {
+            word-break: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        /* Sign-up section mobile responsiveness */
+        @media (max-width: 768px) {
+            .sign-up-section h2 {
+                font-size: 2rem !important;
+            }
+            
+            .sign-up-section p {
+                font-size: 1.1rem !important;
+            }
+            
+            .sign-up-section a {
+                font-size: 1.1rem !important;
+                padding: 12px 25px !important;
+                word-break: break-word;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sign-up-section h2 {
+                font-size: 1.7rem !important;
+            }
+            
+            .sign-up-section p {
+                font-size: 1rem !important;
+            }
+            
+            .sign-up-section a {
+                font-size: 1rem !important;
+                padding: 10px 20px !important;
+                word-break: break-word;
+                max-width: 100%;
+            }
+        }
+
+        /* Additional mobile improvements */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .card {
+                padding: 15px;
+            }
+            
+            .card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .subtopics a {
+                font-size: 0.95rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .card {
+                padding: 12px;
+            }
+            
+            .card h2 {
+                font-size: 1.2rem;
+            }
+            
+            .subtopics a {
+                font-size: 0.9rem;
+                padding: 5px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="static/njaio_logo.jpeg" alt="NJAIOLogo" class="logo">
+                <div class="header-text">
+                    <h1>National Junior Artificial Intelligence Olympiad</h1>
+                    <p>Pilot for Singapore schools (19 Jan 2026 - 15 Feb 2026)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Mathematics Card -->
+            <div class="card mathematics">
+                <div class="card-header">
+                    <i class="fas fa-calculator card-icon"></i>
+                    <h2>Mathematics</h2>
+                </div>
+                <ul class="subtopics">
+                    <li><a href="mathematics/linear-algebra.html"><i class="fas fa-vector-square"></i>Linear Algebra</a></li>
+                    <li><a href="mathematics/calculus.html"><i class="fas fa-chart-line"></i>Calculus</a></li>
+                    <li><a href="mathematics/probability.html"><i class="fas fa-dice"></i>Probability</a></li>
+                </ul>
+            </div>
+
+            <!-- Programming Card -->
+            <div class="card programming">
+                <div class="card-header">
+                    <i class="fas fa-code card-icon"></i>
+                    <h2>Programming</h2>
+                </div>
+                <ul class="subtopics">
+                    <li><a href="programming/python.html"><i class="fab fa-python"></i>Python</a></li>
+                    <li><a href="programming/numpy.html"><i class="fas fa-th"></i>NumPy</a></li>
+                    <li><a href="programming/pandas.html"><i class="fas fa-table"></i>Pandas</a></li>
+                    <li><a href="programming/matplotlib.html"><i class="fas fa-chart-bar"></i>Matplotlib</a></li>
+                    <li><a href="programming/pytorch.html"><i class="fas fa-fire"></i>PyTorch</a></li>
+                    <li><a href="programming/debugging.html"><i class="fas fa-bug"></i>Debugging</a></li>
+                </ul>
+            </div>
+
+            <!-- AI-ML-DL Card -->
+            <div class="card ai-ml-dl">
+                <div class="card-header">
+                    <i class="fas fa-brain card-icon"></i>
+                    <h2>AI-ML-DL</h2>
+                </div>
+                <ul class="subtopics">
+                    <li><a href="ai-ml-dl/classical-ml.html"><i class="fas fa-robot"></i>Classical ML</a></li>
+                    <li><a href="ai-ml-dl/neural-networks.html"><i class="fas fa-network-wired"></i>Neural Networks</a></li>
+                    <li><a href="ai-ml-dl/computer-vision.html"><i class="fas fa-eye"></i>Computer Vision</a></li>
+                    <li><a href="ai-ml-dl/natural-language-processing.html"><i class="fas fa-language"></i>Natural Language Processing</a></li>
+                    <li><a href="ai-ml-dl/generative-ai.html"><i class="fas fa-magic"></i>Generative AI</a></li>
+                </ul>
+            </div>
+
+            <!-- Problem Solving Card -->
+            <div class="card problem-solving">
+                <div class="card-header">
+                    <i class="fas fa-puzzle-piece card-icon"></i>
+                    <h2>Problem Solving</h2>
+                </div>
+                <ul class="subtopics">
+                    <li><a href="problem-solving/algorithm-design.html"><i class="fas fa-sitemap"></i>Algorithm Design</a></li>
+                    <li><a href="problem-solving/optimisation.html"><i class="fas fa-chart-line"></i>Optimisation</a></li>
+                    <li><a href="problem-solving/system-design.html"><i class="fas fa-cogs"></i>System Design</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Learning Resources -->
+    <div class="container">
+        <div class="card external-resources" style="margin-top: 30px; background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%); border-left: 5px solid #4CAF50;">
+            <div class="card-header" style="border-bottom: 3px solid #4CAF50;">
+                <i class="fas fa-external-link-alt card-icon" style="color: #4CAF50;"></i>
+                <h2 style="color: #2E7D32;">External Learning Resources</h2>
+            </div>
+            <div style="padding: 20px; line-height: 1.6;">
+                <p style="margin-bottom: 15px; color: #333;">
+                    For self-directed learners, NOAI Singapore provides some recommended online courses at 
+                    <a href="https://learn.aisingapore.org/national-olympiad-in-artificial-intelligence/" target="_blank" class="footer-link" style="color: #1976D2; font-weight: 600;">https://learn.aisingapore.org/national-olympiad-in-artificial-intelligence/</a>
+                </p>
+                <p style="margin-bottom: 15px; color: #333;">
+                    We also recommend <a href="https://www.deeplearning.ai/courses/mathematics-for-machine-learning-and-data-science-specialization/" target="_blank" class="footer-link" style="color: #1976D2; font-weight: 600;">https://www.deeplearning.ai/courses/mathematics-for-machine-learning-and-data-science-specialization/</a> 
+                    <strong>(free plan available)</strong> for building the mathematical foundations in AI learning.
+                </p>
+                <p style="margin-bottom: 0; color: #555; font-style: italic;">
+                    Come across a student-friendly learning resource on AI? Suggest at <a href="https://computing.sg/goto/njaiofeedback" target="_blank" class="footer-link" style="color: #1976D2; font-weight: 600;">https://computing.sg/goto/njaiofeedback</a> 
+                    and we will acknowledge your contribution(s)! 😊
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign-up Section -->
+    <div class="container">
+        <div class="card sign-up-section" style="margin-top: 30px; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); border-left: 5px solid #ff0000; text-align: center; padding: 40px 20px;">
+            <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                <i class="fas fa-user-plus" style="margin-right: 15px;"></i>
+                Sign up for NJAIO Pilot
+            </h2>
+            <p style="color: white; font-size: 1.3rem; font-weight: 600; margin-bottom: 25px;">
+                Join thousands of students in developing your AI literacy and competencies!
+            </p>
+            <a href="https://computing.sg/goto/njaiopilot" target="_blank" style="display: inline-block; background: white; color: #ff6b6b; padding: 15px 40px; font-size: 1.4rem; font-weight: 700; text-decoration: none; border-radius: 50px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;">
+                <i class="fas fa-rocket" style="margin-right: 10px;"></i>
+                https://computing.sg/goto/njaiopilot
+            </a>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1rem; margin-top: 20px; font-style: italic;">
+                Registration <span style="text-decoration: line-through;">closes February 12, 2026</span> <strong>reopened due to popular request</strong> • Unlimited spots available
+            </p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text" style="word-wrap: break-word; overflow-wrap: break-word;">
+                NJAIO is a community education outreach programme by SIMCC and ComputingSG. 
+                More info at <a href="https://jaio.simcc.org" target="_blank" class="footer-link" style="word-break: break-word;">https://jaio.simcc.org</a>
+            </p>
+            <div class="footer-contact">
+                <a href="mailto:njaio@computing.sg" class="email-link">
+                    <i class="fas fa-envelope email-icon"></i>
+                    njaio@computing.sg
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
